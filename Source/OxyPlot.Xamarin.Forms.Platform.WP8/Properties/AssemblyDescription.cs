@@ -1,16 +1,16 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AssemblyInfo.cs" company="OxyPlot">
+// <copyright file="AssemblyDescription.cs" company="OxyPlot">
 //   Copyright (c) 2014 OxyPlot contributors
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Reflection;
-using System.Runtime.CompilerServices;
+using System.Resources;
 using System.Runtime.InteropServices;
-using Android.App;
 
-[assembly: AssemblyTitle("OxyPlot ExampleBrowser")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("OxyPlot.XamarinForms.WP8")]
+[assembly: AssemblyDescription("OxyPlot for Xamarin.Forms.Platform.WP8")]
 
-[assembly: UsesPermission(Android.Manifest.Permission.Internet)]
-[assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
+[assembly: ComVisible(false)]
+[assembly: Guid("f9bcc093-1351-4219-96da-c7577037cc4a")]
+[assembly: NeutralResourcesLanguageAttribute("en-US")]
