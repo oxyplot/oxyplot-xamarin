@@ -1,10 +1,10 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AssemblyInfo.cs" company="OxyPlot">
+// <copyright file="AssemblyDescription.cs" company="OxyPlot">
 //   Copyright (c) 2014 OxyPlot contributors
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Reflection;
 
-[assembly: AssemblyTitle("OxyPlot.Xamarin.iOS.Classic")]
-[assembly: AssemblyDescription("OxyPlot for Xamarin.iOS.Classic (monotouch)")]
+[assembly: AssemblyTitle("OxyPlot.Xamarin.Android")]
+[assembly: AssemblyDescription("OxyPlot for Xamarin.Android")]
