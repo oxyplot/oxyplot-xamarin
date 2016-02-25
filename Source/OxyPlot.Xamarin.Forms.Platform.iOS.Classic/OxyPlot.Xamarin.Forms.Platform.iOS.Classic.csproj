@@ -36,6 +36,10 @@
     <DocumentationFile>..\..\Output\Xamarin.Forms.Platform.iOS.Classic\OxyPlot.Xamarin.Forms.Platform.iOS.Classic.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OxyPlot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Core.1.0.0-unstable1983\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\OxyPlot.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -70,10 +74,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\OxyPlot\OxyPlot.csproj">
-      <Project>{7A0B35C0-DD17-4964-8E9A-44D6CECDC692}</Project>
-      <Name>OxyPlot</Name>
-    </ProjectReference>
     <ProjectReference Include="..\OxyPlot.Xamarin.Forms\OxyPlot.Xamarin.Forms.csproj">
       <Project>{B63C5F8C-61C8-4E69-93D6-F49F816D3746}</Project>
       <Name>OxyPlot.Xamarin.Forms</Name>

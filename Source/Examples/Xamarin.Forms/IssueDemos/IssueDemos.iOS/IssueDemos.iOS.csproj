@@ -114,10 +114,6 @@
       <IsAppExtension>false</IsAppExtension>
       <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\OxyPlot\OxyPlot.csproj">
-      <Project>{7a0b35c0-dd17-4964-8e9a-44d6cecdc692}</Project>
-      <Name>OxyPlot</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IssueDemos\IssueDemos.csproj">
       <Name>IssueDemos</Name>
     </ProjectReference>
@@ -141,6 +137,10 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="OxyPlot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\OxyPlot.Core.1.0.0-unstable1983\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\OxyPlot.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />

@@ -127,10 +127,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OxyPlot.Windows\OxyPlot.Windows.csproj">
-      <Project>{667573f6-b2dc-487d-998c-78dd3dad0650}</Project>
-      <Name>OxyPlot.Windows</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\OxyPlot.Xamarin.Forms.Platform.UWP\OxyPlot.Xamarin.Forms.Platform.UWP.csproj">
       <Project>{df37bc48-3a9f-4d90-ba38-70f8c22bca7b}</Project>
       <Name>OxyPlot.Xamarin.Forms.Platform.UWP</Name>

@@ -160,10 +160,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OxyPlot.WP8\OxyPlot.WP8.csproj">
-      <Project>{66493b76-2850-4035-9449-0e2f95229c48}</Project>
-      <Name>OxyPlot.WP8</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\OxyPlot.Xamarin.Forms.Platform.WP8\OxyPlot.Xamarin.Forms.Platform.WP8.csproj">
       <Project>{f9bcc093-1351-4219-96da-c7577037cc4a}</Project>
       <Name>OxyPlot.Xamarin.Forms.Platform.WP8</Name>
@@ -172,10 +168,6 @@
       <Project>{b63c5f8c-61c8-4e69-93d6-f49f816d3746}</Project>
       <Name>OxyPlot.Xamarin.Forms</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\OxyPlot\OxyPlot.csproj">
-      <Project>{7a0b35c0-dd17-4964-8e9a-44d6cecdc692}</Project>
-      <Name>OxyPlot</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IssueDemos\IssueDemos.csproj">
       <Name>IssueDemos</Name>
     </ProjectReference>
@@ -183,6 +175,10 @@
   <ItemGroup>
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OxyPlot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\OxyPlot.Core.1.0.0-unstable1983\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\OxyPlot.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">

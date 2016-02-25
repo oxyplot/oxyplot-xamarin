@@ -113,17 +113,9 @@
     <EmbeddedResource Include="Properties\OxyPlot.Xamarin.Forms.Platform.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OxyPlot.Windows\OxyPlot.Windows.csproj">
-      <Project>{667573f6-b2dc-487d-998c-78dd3dad0650}</Project>
-      <Name>OxyPlot.Windows</Name>
-    </ProjectReference>
     <ProjectReference Include="..\OxyPlot.Xamarin.Forms\OxyPlot.Xamarin.Forms.csproj">
       <Project>{b63c5f8c-61c8-4e69-93d6-f49f816d3746}</Project>
       <Name>OxyPlot.Xamarin.Forms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OxyPlot\OxyPlot.csproj">
-      <Project>{7a0b35c0-dd17-4964-8e9a-44d6cecdc692}</Project>
-      <Name>OxyPlot</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
