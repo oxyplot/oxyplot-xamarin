@@ -1,0 +1,1 @@
+UpdateFileHeaders.exe /Company="OxyPlot" /copyright="Copyright (c) 2014 OxyPlot contributors" /Directory="..\Source"
