@@ -16,7 +16,7 @@ before_build:
   - gitversion /l console /output buildserver /updateAssemblyInfo
 
 build:
-  project: src/OxyPlot.AppVeyor.sln
+  project: Source/OxyPlot.AppVeyor.sln
   verbosity: minimal
   
 after_build:
