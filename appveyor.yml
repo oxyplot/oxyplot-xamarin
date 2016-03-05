@@ -5,8 +5,8 @@ pull_requests:
   do_not_increment_build_number: true
 
 install:
-  - cinst gitversion.portable -pre -y
-  - cinst gitlink -Pre -y
+  - cinst gitversion.portable --version=3.4.1 -y
+  - cinst gitlink --version=2.2.0 -y
   - cinst android-sdk
   - ps: Build\install-android-sdk.ps1
 
