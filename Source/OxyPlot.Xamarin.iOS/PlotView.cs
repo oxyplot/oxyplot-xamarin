@@ -33,6 +33,7 @@ namespace OxyPlot.Xamarin.iOS
         private IPlotController defaultController;
 
         private PanZoomGestureRecognizer panZoomGesture = new PanZoomGestureRecognizer();
+		private UITapGestureRecognizer tapGesture = new UITapGestureRecognizer();
                
         /// <summary>
         /// Initializes a new instance of the <see cref="OxyPlot.Xamarin.iOS.PlotView"/> class.
@@ -81,9 +82,13 @@ namespace OxyPlot.Xamarin.iOS
             this.KeepAspectRatioWhenPinching = true;
 
 			this.panZoomGesture.AddTarget(HandlePanZoomGesture);
+			this.tapGesture.AddTarget(HandleTapGesture);
+			//Prevent panZoom and tap gestures from being recognized simultaneously
+			this.tapGesture.RequireGestureRecognizerToFail(this.panZoomGesture);
 
             // Do not intercept touches on overlapping views
             this.panZoomGesture.ShouldReceiveTouch += (recognizer, touch) => touch.View == this;
+			this.tapGesture.ShouldReceiveTouch += (recognizer, touch) => touch.View == this;
         }
 
         /// <summary>
@@ -333,10 +338,12 @@ namespace OxyPlot.Xamarin.iOS
 			if (newsuper == null)
 			{
 				this.RemoveGestureRecognizer (this.panZoomGesture);
+				this.RemoveGestureRecognizer (this.tapGesture);
 			}
 			else if (this.Superview == null)
 			{
 				this.AddGestureRecognizer (this.panZoomGesture);
+				this.AddGestureRecognizer (this.tapGesture);
 			}
 
 			base.WillMoveToSuperview (newsuper);
@@ -358,5 +365,12 @@ namespace OxyPlot.Xamarin.iOS
                     break;
             }
         }
+
+		private void HandleTapGesture()
+		{
+			var location = tapGesture.LocationInView(this);
+			ActualController.HandleTouchStarted(this, location.ToTouchEventArgs());
+			ActualController.HandleTouchCompleted(this, location.ToTouchEventArgs());
+		}
     }
 }
