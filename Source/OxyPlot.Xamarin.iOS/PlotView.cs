@@ -83,6 +83,7 @@ namespace OxyPlot.Xamarin.iOS
 
 			this.panZoomGesture.AddTarget(HandlePanZoomGesture);
 			this.tapGesture.AddTarget(HandleTapGesture);
+			//Prevent panZoom and tap gestures from being recognized simultaneously
 			this.tapGesture.RequireGestureRecognizerToFail(this.panZoomGesture);
 
             // Do not intercept touches on overlapping views
