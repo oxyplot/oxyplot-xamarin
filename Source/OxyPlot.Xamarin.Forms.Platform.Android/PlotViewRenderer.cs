@@ -98,7 +98,7 @@ namespace OxyPlot.Xamarin.Forms.Platform.Android
             }
         }
  
-        void DetachModelFromView())
+        void DetachModelFromView()
         {
             var model = base.Element.Model as OxyPlot.IPlotModel;
             if (model != null)
