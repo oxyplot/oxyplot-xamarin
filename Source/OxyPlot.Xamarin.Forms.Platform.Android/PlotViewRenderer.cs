@@ -55,7 +55,7 @@ namespace OxyPlot.Xamarin.Forms.Platform.Android
                 return;
             }
 
-            this.CleanUpModel(base.Element.Model);
+            this.DetachModelFromView();
 
             var plotView = new PlotView(this.Context)
             {
@@ -83,7 +83,7 @@ namespace OxyPlot.Xamarin.Forms.Platform.Android
 
             if (e.PropertyName == Xamarin.Forms.PlotView.ModelProperty.PropertyName)
             {
-                this.CleanUpModel(base.Element.Model);
+                this.DetachModelFromView();
                 this.Control.Model = this.Element.Model;
             }
 
@@ -98,7 +98,7 @@ namespace OxyPlot.Xamarin.Forms.Platform.Android
             }
         }
  
-        void CleanUpModel(OxyPlot.PlotModel plot)
+        void DetachModelFromView())
         {
             var model = base.Element.Model as OxyPlot.IPlotModel;
             if (model != null)
