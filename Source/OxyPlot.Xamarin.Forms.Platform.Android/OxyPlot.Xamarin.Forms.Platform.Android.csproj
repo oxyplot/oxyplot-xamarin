@@ -94,14 +94,9 @@
     <Compile Include="Forms.cs" />
     <Compile Include="PlotViewRenderer.cs" />
     <Compile Include="Properties\AssemblyDescription.cs" />
-    <Compile Include="Resources\Resource.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\AboutResources.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OxyPlot.Xamarin.Android\OxyPlot.Xamarin.Android.csproj">
