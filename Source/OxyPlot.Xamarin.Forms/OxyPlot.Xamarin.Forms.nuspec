@@ -25,6 +25,10 @@
         <dependency id="OxyPlot.Xamarin.Android" version="[$version$]"/>
         <dependency id="Xamarin.Forms" version="2.0.0.6490" />
       </group>
+      <group targetFramework="uap10.0">
+        <dependency id="OxyPlot.Windows" version="1.0.0"/>
+        <dependency id="Xamarin.Forms" version="2.0.0.6490" />
+      </group>
       <group targetFramework="windowsphone8">
         <dependency id="OxyPlot.WP8" version="[$version$]"/>
         <dependency id="Xamarin.Forms" version="2.0.0.6490" />
@@ -47,8 +51,15 @@
     <file src="..\..\Output\Xamarin.Forms.Platform.Android\OxyPlot.Xamarin.Forms.Platform.Android.???" target="lib/MonoAndroid10" />
     <file src="..\..\Output\Xamarin.Forms.Platform.Android\OxyPlot.Xamarin.Forms.???" target="lib/MonoAndroid10" />
 
+    <file src="..\..\Output\Xamarin.Forms.Platform.UWP\x86\OxyPlot.Xamarin.Forms.Platform.UWP.???" target="lib/uap10.0/x86" />
+    <file src="..\..\Output\Xamarin.Forms.Platform.UWP\x64\OxyPlot.Xamarin.Forms.Platform.UWP.???" target="lib/uap10.0/x64" />
+    <file src="..\..\Output\Xamarin.Forms.Platform.UWP\ARM\OxyPlot.Xamarin.Forms.Platform.UWP.???" target="lib/uap10.0/ARM" />
+    <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/uap10.0/x86" />
+    <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/uap10.0/x64" />
+    <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/uap10.0/ARM" />
+
     <file src="..\..\Output\Xamarin.Forms.Platform.WP8\OxyPlot.Xamarin.Forms.Platform.WP8.???" target="lib/wp80" />
-    <file src="..\..\Output\Xamarin.Forms.Platform.WP8\OxyPlot.Xamarin.Forms.???" target="lib/wp80" />
+    <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/wp80" />
 
     <file src="..\..\LICENSE" />
     <file src="..\..\AUTHORS" />
