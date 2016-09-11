@@ -1,8 +1,8 @@
 ﻿{
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
-    "OxyPlot.Core": "1.0.0-unstable2146",
-    "OxyPlot.Windows": "1.0.0-unstable2146",
+    "OxyPlot.Core": "1.0.0",
+    "OxyPlot.Windows": "1.0.0",
     "Xamarin.Forms": "2.2.0.31"
   },
   "frameworks": {
