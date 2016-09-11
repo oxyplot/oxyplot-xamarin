@@ -239,5 +239,8 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 
+# Generated files
+Resource.Designer.cs
+
 # OxyPlot specific
 Output/
