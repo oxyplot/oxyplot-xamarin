@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OxyPlot.MonoTouch", "OxyPlot.MonoTouch\OxyPlot.MonoTouch.csproj", "{7DCF07B1-B8BD-4EF0-B1FC-2AAC4466B6C6}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OxyPlot.Xamarin.iOS", "OxyPlot.Xamarin.iOS\OxyPlot.Xamarin.iOS.csproj", "{017BFF60-40E6-4520-8554-5862A95EF123}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OxyPlot.Xamarin.Forms.Platform.Android", "OxyPlot.Xamarin.Forms.Platform.Android\OxyPlot.Xamarin.Forms.Platform.Android.csproj", "{A40AD708-3FF5-42FC-92B0-8D93FF1DB58F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OxyPlot.Xamarin.Forms.Platform.UWP", "OxyPlot.Xamarin.Forms.Platform.UWP\OxyPlot.Xamarin.Forms.Platform.UWP.csproj", "{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -199,6 +201,30 @@ Global
 		{A40AD708-3FF5-42FC-92B0-8D93FF1DB58F}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{A40AD708-3FF5-42FC-92B0-8D93FF1DB58F}.Release|x64.ActiveCfg = Release|Any CPU
 		{A40AD708-3FF5-42FC-92B0-8D93FF1DB58F}.Release|x86.ActiveCfg = Release|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Debug|ARM.ActiveCfg = Debug|ARM
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Debug|ARM.Build.0 = Debug|ARM
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Debug|x64.ActiveCfg = Debug|x64
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Debug|x64.Build.0 = Debug|x64
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Debug|x86.ActiveCfg = Debug|x86
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Debug|x86.Build.0 = Debug|x86
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Release|ARM.ActiveCfg = Release|ARM
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Release|ARM.Build.0 = Release|ARM
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Release|iPhone.Build.0 = Release|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Release|x64.ActiveCfg = Release|x64
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Release|x64.Build.0 = Release|x64
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Release|x86.ActiveCfg = Release|x86
+		{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
