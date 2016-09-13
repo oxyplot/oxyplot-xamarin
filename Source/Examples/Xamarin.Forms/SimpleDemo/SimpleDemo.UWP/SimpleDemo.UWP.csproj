@@ -127,9 +127,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OxyPlot.Xamarin.Forms.Platform.UWP\OxyPlot.Xamarin.Forms.Platform.UWP.csproj">
+    <ProjectReference Include="..\..\..\..\OxyPlot.Xamarin.Forms.Platform.UAP\OxyPlot.Xamarin.Forms.Platform.UAP.csproj">
       <Project>{df37bc48-3a9f-4d90-ba38-70f8c22bca7b}</Project>
-      <Name>OxyPlot.Xamarin.Forms.Platform.UWP</Name>
+      <Name>OxyPlot.Xamarin.Forms.Platform.UAP</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleDemo\SimpleDemo.csproj">
       <Project>{581ef961-d53f-44dd-a5e9-37f511c0475a}</Project>
