@@ -54,8 +54,8 @@
     <file src="..\..\Output\Xamarin.Forms.Platform.UAP\OxyPlot.Xamarin.Forms.Platform.UAP.???" target="lib/uap10.0" />
     <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/uap10.0" />
 
-    <file src="..\..\Output\Xamarin.Forms.Platform.WP8\OxyPlot.Xamarin.Forms.Platform.WP8.???" target="lib/wp80" />
-    <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/wp80" />
+    <file src="..\..\Output\Xamarin.Forms.Platform.WP8\OxyPlot.Xamarin.Forms.Platform.WP8.???" target="lib/wp8" />
+    <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/wp8" />
 
     <file src="..\..\LICENSE" />
     <file src="..\..\AUTHORS" />
