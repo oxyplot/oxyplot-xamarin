@@ -7,8 +7,8 @@
     <ProjectGuid>{DF37BC48-3A9F-4D90-BA38-70F8C22BCA7B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OxyPlot.Xamarin.Forms.Platform.UWP</RootNamespace>
-    <AssemblyName>OxyPlot.Xamarin.Forms.Platform.UWP</AssemblyName>
+    <RootNamespace>OxyPlot.Xamarin.Forms.Platform.UAP</RootNamespace>
+    <AssemblyName>OxyPlot.Xamarin.Forms.Platform.UAP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -31,11 +31,11 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Output\Xamarin.Forms.Platform.UWP\</OutputPath>
+    <OutputPath>..\..\Output\Xamarin.Forms.Platform.UAP\</OutputPath>
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\Output\Xamarin.Forms.Platform.UWP\OxyPlot.Xamarin.Forms.Platform.UWP.XML</DocumentationFile>
+    <DocumentationFile>..\..\Output\Xamarin.Forms.Platform.UAP\OxyPlot.Xamarin.Forms.Platform.UAP.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
