@@ -51,12 +51,8 @@
     <file src="..\..\Output\Xamarin.Forms.Platform.Android\OxyPlot.Xamarin.Forms.Platform.Android.???" target="lib/MonoAndroid10" />
     <file src="..\..\Output\Xamarin.Forms.Platform.Android\OxyPlot.Xamarin.Forms.???" target="lib/MonoAndroid10" />
 
-    <file src="..\..\Output\Xamarin.Forms.Platform.UWP\x86\OxyPlot.Xamarin.Forms.Platform.UWP.???" target="lib/uap10.0/x86" />
-    <file src="..\..\Output\Xamarin.Forms.Platform.UWP\x64\OxyPlot.Xamarin.Forms.Platform.UWP.???" target="lib/uap10.0/x64" />
-    <file src="..\..\Output\Xamarin.Forms.Platform.UWP\ARM\OxyPlot.Xamarin.Forms.Platform.UWP.???" target="lib/uap10.0/ARM" />
-    <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/uap10.0/x86" />
-    <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/uap10.0/x64" />
-    <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/uap10.0/ARM" />
+    <file src="..\..\Output\Xamarin.Forms.Platform.UWP\OxyPlot.Xamarin.Forms.Platform.UWP.???" target="lib/uap10.0" />
+    <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/uap10.0" />
 
     <file src="..\..\Output\Xamarin.Forms.Platform.WP8\OxyPlot.Xamarin.Forms.Platform.WP8.???" target="lib/wp80" />
     <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/wp80" />

@@ -14,9 +14,6 @@ before_build:
 
 build_script:
   - msbuild Source/OxyPlot.AppVeyor.sln "/property:Platform=Any CPU" "/property:Configuration=Release" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-  - msbuild Source/OxyPlot.AppVeyor.sln "/property:Platform=x86" "/property:Configuration=Release" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-  - msbuild Source/OxyPlot.AppVeyor.sln "/property:Platform=x64" "/property:Configuration=Release" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-  - msbuild Source/OxyPlot.AppVeyor.sln "/property:Platform=ARM" "/property:Configuration=Release" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
   
 after_build:
   - gitlink c:\projects\oxyplot-xamarin -u https://github.com/oxyplot/oxyplot-xamarin -f Source/OxyPlot.AppVeyor.sln -ignore OxyPlot.Windows10,OxyPlot.MonoTouch,OxyPlot.Xamarin.Android,OxyPlot.Xamarin.iOS,OxyPlot.Xamarin.Forms.Platform.Android,OxyPlot.Xamarin.Forms.Platform.iOS,OxyPlot.Xamarin.Forms.Platform.iOS.Classic
