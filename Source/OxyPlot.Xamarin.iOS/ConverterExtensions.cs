@@ -39,21 +39,30 @@ namespace OxyPlot.Xamarin.iOS
         public static OxyTouchEventArgs ToTouchEventArgs(this UITouch touch, UIView view)
         {
             var location = touch.LocationInView(view);
-            return new OxyTouchEventArgs
-            {
-                Position = new ScreenPoint(location.X, location.Y),
-                DeltaTranslation = new ScreenVector(0, 0),
-                DeltaScale = new ScreenVector(1, 1)
-            };
+			return (location.ToTouchEventArgs());
         }
 
-        /// <summary>
-        /// Converts a <see cref="OxyColor" /> to a <see cref="CGColor" />.
-        /// </summary>
-        /// <param name="c">The color to convert.</param>
-        /// <returns>The converted color.</returns>
-        // ReSharper disable once InconsistentNaming
-        public static CGColor ToCGColor(this OxyColor c)
+		/// <summary>
+		/// Converts <see cref="CoreGraphics.CGPoint" /> tap location to <see cref="OxyTouchEventArgs" />.
+		/// </summary>
+		/// <param name="location">The tap location.</param>
+		/// <returns>The converted arguments.</returns>
+		public static OxyTouchEventArgs ToTouchEventArgs(this CGPoint location)
+		{
+			return new OxyTouchEventArgs {
+				Position = new ScreenPoint(location.X, location.Y),
+				DeltaTranslation = new ScreenVector(0, 0),
+				DeltaScale = new ScreenVector(1, 1)
+			};
+		}
+
+		/// <summary>
+		/// Converts a <see cref="OxyColor" /> to a <see cref="CGColor" />.
+		/// </summary>
+		/// <param name="c">The color to convert.</param>
+		/// <returns>The converted color.</returns>
+		// ReSharper disable once InconsistentNaming
+		public static CGColor ToCGColor(this OxyColor c)
         {
             return new CGColor(c.R / 255f, c.G / 255f, c.B / 255f, c.A / 255f);
         }
