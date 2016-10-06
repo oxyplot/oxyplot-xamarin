@@ -45,9 +45,6 @@
     <file src="..\..\Output\Xamarin.Forms.Platform.iOS\OxyPlot.Xamarin.Forms.Platform.iOS.???" target="lib/Xamarin.iOS10" />
     <file src="..\..\Output\Xamarin.Forms.Platform.iOS\OxyPlot.Xamarin.Forms.???" target="lib/Xamarin.iOS10" />
 
-    <file src="..\..\Output\Xamarin.Forms.Platform.iOS.Classic\OxyPlot.Xamarin.Forms.Platform.iOS.Classic.???" target="lib/MonoTouch10" />
-    <file src="..\..\Output\Xamarin.Forms.Platform.iOS.Classic\OxyPlot.Xamarin.Forms.???" target="lib/MonoTouch10" />
-
     <file src="..\..\Output\Xamarin.Forms.Platform.Android\OxyPlot.Xamarin.Forms.Platform.Android.???" target="lib/MonoAndroid10" />
     <file src="..\..\Output\Xamarin.Forms.Platform.Android\OxyPlot.Xamarin.Forms.???" target="lib/MonoAndroid10" />
 
