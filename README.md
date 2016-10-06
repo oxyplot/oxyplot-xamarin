@@ -9,6 +9,6 @@ This repository contains the implementations for Xamarin Android, iOS and Forms.
 Package | Targets
 --------|---------------
 [OxyPlot.Xamarin.Android](https://www.nuget.org/packages/OxyPlot.Xamarin.Android) | MonoAndroid
-[OxyPlot.Xamarin.iOS](https://www.nuget.org/packages/OxyPlot.Xamarin.iOS) | MonoTouch and iOS10
+[OxyPlot.Xamarin.iOS](https://www.nuget.org/packages/OxyPlot.Xamarin.iOS) | iOS10
 [OxyPlot.Xamarin.Mac](https://www.nuget.org/packages/OxyPlot.Xamarin.Mac) | Mac20
-[OxyPlot.Xamarin.Forms](https://www.nuget.org/packages/OxyPlot.Xamarin.Forms) | MonoTouch, iOS10, MonoAndroid, WP8
+[OxyPlot.Xamarin.Forms](https://www.nuget.org/packages/OxyPlot.Xamarin.Forms) | iOS10, MonoAndroid, WP8

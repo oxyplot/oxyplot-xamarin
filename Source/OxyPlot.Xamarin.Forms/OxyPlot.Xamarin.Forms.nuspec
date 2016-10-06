@@ -13,10 +13,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>plotting plot charting chart xamarin forms android windows phone ios</tags>
     <dependencies>
-      <group targetFramework="MonoTouch">
-        <dependency id="OxyPlot.Xamarin.iOS" version="[$version$]"/>
-        <dependency id="Xamarin.Forms" version="2.3.1.114" />
-      </group>
       <group targetFramework="Xamarin.iOS10">
         <dependency id="OxyPlot.Xamarin.iOS" version="[$version$]"/>
         <dependency id="Xamarin.Forms" version="2.3.1.114" />
@@ -40,13 +36,10 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+    <file src="..\..\Output\Xamarin.Forms\OxyPlot.Xamarin.Forms.???" target="lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10" />
 
     <file src="..\..\Output\Xamarin.Forms.Platform.iOS\OxyPlot.Xamarin.Forms.Platform.iOS.???" target="lib/Xamarin.iOS10" />
     <file src="..\..\Output\Xamarin.Forms.Platform.iOS\OxyPlot.Xamarin.Forms.???" target="lib/Xamarin.iOS10" />
-
-    <file src="..\..\Output\Xamarin.Forms.Platform.iOS.Classic\OxyPlot.Xamarin.Forms.Platform.iOS.Classic.???" target="lib/MonoTouch10" />
-    <file src="..\..\Output\Xamarin.Forms.Platform.iOS.Classic\OxyPlot.Xamarin.Forms.???" target="lib/MonoTouch10" />
 
     <file src="..\..\Output\Xamarin.Forms.Platform.Android\OxyPlot.Xamarin.Forms.Platform.Android.???" target="lib/MonoAndroid10" />
     <file src="..\..\Output\Xamarin.Forms.Platform.Android\OxyPlot.Xamarin.Forms.???" target="lib/MonoAndroid10" />
