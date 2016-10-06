@@ -58,21 +58,27 @@ namespace OxyPlot.Xamarin.Android
         /// Initializes a new instance of the <see cref="CanvasRenderContext" /> class.
         /// </summary>
         /// <param name="scale">The scale.</param>
-        public CanvasRenderContext(double scale)
+        /// <param name="fontScale">The scale to use for text and font.</param>
+        public CanvasRenderContext(double scale, double fontScale)
         {
             this.paint = new Paint();
             this.path = new Path();
             this.bounds = new Rect();
             this.pts = new List<float>();
             this.Scale = scale;
+            this.FontScale = fontScale;
         }
 
         /// <summary>
-        /// Gets the factor that this.Scales from OxyPlot´s device independent pixels (96 dpi) to 
-        /// Android´s density-independent pixels (160 dpi).
+        /// Gets the factor for Android´s density-independent pixels (160 dpi as baseline density).
         /// </summary>
         /// <remarks>See <a href="http://developer.android.com/guide/practices/screens_support.html">Supporting multiple screens.</a>.</remarks>
         public double Scale { get; private set; }
+
+        /// <summary>
+        /// Gets the factor for Android's scale-independent pixels (160 dpi as baseline density).
+        /// </summary>
+        public double FontScale { get; private set; }
 
         /// <summary>
         /// Sets the target.
@@ -351,7 +357,7 @@ namespace OxyPlot.Xamarin.Android
                 float lineHeight, delta;
                 this.GetFontMetrics(this.paint, out lineHeight, out delta);
                 this.paint.GetTextBounds(text, 0, text.Length, this.bounds);
-                return new OxySize(this.bounds.Width() / this.Scale, lineHeight / this.Scale);
+                return new OxySize(this.bounds.Width() / this.FontScale, lineHeight / this.FontScale);
             }
         }
 
