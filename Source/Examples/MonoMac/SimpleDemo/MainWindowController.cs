@@ -11,7 +11,7 @@ namespace SimpleDemo
     using OxyPlot.Axes;
     using OxyPlot.Series;
 
-    using OxyPlot.Mono.Mac;
+    using OxyPlot.MonoMac;
 
     public partial class MainWindowController : NSWindowController
     {
@@ -49,7 +49,7 @@ namespace SimpleDemo
             model.Series.Add (new FunctionSeries (Math.Sin, 0, 10, 200));
             plotView.Model = model;
             Window.ContentView = plotView;
-            Window.Title = "OxyPlot on Xamarin.Mac (Unified API)";
+            Window.Title = "OxyPlot on MonoMac";
         }
 
         public new MainWindow Window {

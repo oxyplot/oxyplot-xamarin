@@ -6,18 +6,18 @@
 //   Implements a <see cref="IRenderContext"/> for CoreGraphics.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-using MonoMac.AppKit;
-using System.Drawing;
 
-namespace OxyPlot.Mono.Mac
+namespace OxyPlot.MonoMac
 {
     using System;
     using System.Collections.Generic;
+	using System.Drawing;
     using System.Linq;
 
-    using MonoMac.CoreGraphics;
-    using MonoMac.CoreText;
-    using MonoMac.Foundation;
+	using global::MonoMac.AppKit;
+	using global::MonoMac.CoreGraphics;
+	using global::MonoMac.CoreText;
+	using global::MonoMac.Foundation;
 
     /// <summary>
     /// Implements a <see cref="IRenderContext"/> for CoreGraphics.

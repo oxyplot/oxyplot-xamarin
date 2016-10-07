@@ -35,6 +35,7 @@ namespace OxyPlot.Xamarin.Mac
         /// Converts a <see cref="System.Drawing.PointF" /> to a <see cref="ScreenPoint" />.
         /// </summary>
         /// <param name="p">The point to convert.</param>
+		/// <param name="bounds">The bounds of the window.</param> 
         /// <returns>The converted point.</returns>
         public static ScreenPoint LocationToScreenPoint (this CGPoint p, CGRect bounds)
         {
@@ -115,6 +116,11 @@ namespace OxyPlot.Xamarin.Mac
             return new CGRect ((float)rect.Left, (float)rect.Top, (float)(rect.Right - rect.Left), (float)(rect.Bottom - rect.Top));
         }
 
+		/// <summary>
+		/// Converts a <see cref="NSEventType" /> to a <see cref="OxyMouseButton" />.
+		/// </summary>
+		/// <param name="theType">The event type to convert.</param>
+		/// <returns>The converted value.</returns>
         public static OxyMouseButton ToButton (this NSEventType theType)
         {
             switch (theType) {
@@ -129,6 +135,11 @@ namespace OxyPlot.Xamarin.Mac
             }
         }
 
+		/// <summary>
+		/// Converts a <see cref="NSEventModifierMask" /> to a <see cref="OxyModifierKeys" />.
+		/// </summary>
+		/// <param name="theMask">The mask to convert.</param>
+		/// <returns>The converted value.</returns>
         public static OxyModifierKeys ToModifierKeys (this NSEventModifierMask theMask)
         {
             var keys = OxyModifierKeys.None;
@@ -146,6 +157,12 @@ namespace OxyPlot.Xamarin.Mac
             return keys;
         }
 
+		/// <summary>
+		/// Converts a <see cref="NSEvent" /> to a <see cref="OxyMouseDownEventArgs" />.
+		/// </summary>
+		/// <param name="theEvent">The event to convert.</param>
+		/// <param name="bounds">The bounds of the window.</param> 
+		/// <returns>The converted event arguments.</returns>
         public static OxyMouseDownEventArgs ToMouseDownEventArgs (this NSEvent theEvent, CGRect bounds)
         {
             // https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSEvent_Class/Reference/Reference.html
@@ -157,6 +174,12 @@ namespace OxyPlot.Xamarin.Mac
             };
         }
 
+		/// <summary>
+		/// Converts a <see cref="NSEvent" /> to a <see cref="OxyMouseEventArgs" />.
+		/// </summary>
+		/// <param name="theEvent">The event to convert.</param>
+		/// <param name="bounds">The bounds of the window.</param> 
+		/// <returns>The converted event arguments.</returns>
         public static OxyMouseEventArgs ToMouseEventArgs (this NSEvent theEvent, CGRect bounds)
         {
             return new OxyMouseEventArgs {
@@ -165,6 +188,12 @@ namespace OxyPlot.Xamarin.Mac
             };
         }
 
+		/// <summary>
+		/// Converts a <see cref="NSEvent" /> to a <see cref="OxyMouseWheelEventArgs" />.
+		/// </summary>
+		/// <param name="theEvent">The event to convert.</param>
+		/// <param name="bounds">The bounds of the window.</param> 
+		/// <returns>The converted event arguments.</returns>
         public static OxyMouseWheelEventArgs ToMouseWheelEventArgs (this NSEvent theEvent, CGRect bounds)
         {
             return new OxyMouseWheelEventArgs {
@@ -174,6 +203,11 @@ namespace OxyPlot.Xamarin.Mac
             };
         }
 
+		/// <summary>
+		/// Converts a <see cref="NSEvent" /> to a <see cref="OxyKeyEventArgs" />.
+		/// </summary>
+		/// <param name="theEvent">The event to convert.</param>
+		/// <returns>The converted event arguments.</returns>
         public static OxyKeyEventArgs ToKeyEventArgs (this NSEvent theEvent)
         {
             return new OxyKeyEventArgs {
@@ -182,6 +216,11 @@ namespace OxyPlot.Xamarin.Mac
             };
         }
 
+		/// <summary>
+		/// Converts a key code to a <see cref="OxyKey" />.
+		/// </summary>
+		/// <param name="keycode">The key code to convert.</param>
+		/// <returns>The converted key.</returns>
         public static OxyKey ToKey (this ushort keycode)
         {
             // TODO

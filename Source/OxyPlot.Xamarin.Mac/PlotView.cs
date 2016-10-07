@@ -237,6 +237,11 @@ namespace OxyPlot.Xamarin.Mac
             this.AddCursorRect (this.Bounds, cursor);
         }
 
+		/// <summary>
+		/// Convert the specified cursor type.
+		/// </summary>
+		/// <param name="cursorType">Cursor type.</param>
+		/// <returns>The converted cursor.</returns>
         public static NSCursor Convert(CursorType cursorType){
             switch (cursorType) {
             case CursorType.Default:
@@ -301,42 +306,70 @@ namespace OxyPlot.Xamarin.Mac
             }
         }
 
+		/// <summary>
+		/// Handles the mouse down event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void MouseDown (NSEvent theEvent)
         {
             base.MouseDown (theEvent);
             this.ActualController.HandleMouseDown (this, theEvent.ToMouseDownEventArgs(this.Bounds));
         }
 
+		/// <summary>
+		/// Handles the mouse dragged event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void MouseDragged (NSEvent theEvent)
         {
             base.MouseDragged (theEvent);
             this.ActualController.HandleMouseMove (this, theEvent.ToMouseEventArgs (this.Bounds));
         }
 
+		/// <summary>
+		/// Handles the mouse moved event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void MouseMoved (NSEvent theEvent)
         {
             base.MouseMoved (theEvent);
             this.ActualController.HandleMouseMove (this, theEvent.ToMouseEventArgs (this.Bounds));
         }
 
+		/// <summary>
+		/// Handles the mouse up event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void MouseUp (NSEvent theEvent)
         {
             base.MouseUp (theEvent);
             this.ActualController.HandleMouseUp (this, theEvent.ToMouseEventArgs (this.Bounds));
         }
 
+		/// <summary>
+		/// Handles the mouse entered event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void MouseEntered (NSEvent theEvent)
         {
             base.MouseEntered (theEvent);
             this.ActualController.HandleMouseEnter (this, theEvent.ToMouseEventArgs (this.Bounds));
         }
 
+		/// <summary>
+		/// Handles the mouse exited event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void MouseExited (NSEvent theEvent)
         {
             base.MouseExited (theEvent);
             this.ActualController.HandleMouseLeave (this, theEvent.ToMouseEventArgs (this.Bounds));
         }
 
+		/// <summary>
+		/// Handles the mouse wheel event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void ScrollWheel (NSEvent theEvent)
         {
             // TODO: use scroll events to pan?
@@ -344,27 +377,47 @@ namespace OxyPlot.Xamarin.Mac
             this.ActualController.HandleMouseWheel (this, theEvent.ToMouseWheelEventArgs (this.Bounds));
         }
 
+		/// <summary>
+		/// Handles the other mouse down event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void OtherMouseDown (NSEvent theEvent)
         {
             base.OtherMouseDown (theEvent);
         }
 
+		/// <summary>
+		/// Handles the right mouse down event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void RightMouseDown (NSEvent theEvent)
         {
             base.RightMouseDown (theEvent);
         }
 
+		/// <summary>
+		/// Handles the key down event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void KeyDown (NSEvent theEvent)
         {
             base.KeyDown (theEvent);
             this.ActualController.HandleKeyDown (this, theEvent.ToKeyEventArgs ());
         }
 
+		/// <summary>
+		/// Handles the touches began event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void TouchesBeganWithEvent (NSEvent theEvent)
         {
             base.TouchesBeganWithEvent (theEvent);
         }
 
+		/// <summary>
+		/// Handles the magnify event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void MagnifyWithEvent (NSEvent theEvent)
         {
             base.MagnifyWithEvent (theEvent);
@@ -372,11 +425,19 @@ namespace OxyPlot.Xamarin.Mac
             // https://developer.apple.com/library/mac/documentation/cocoa/conceptual/eventoverview/HandlingTouchEvents/HandlingTouchEvents.html
         }
 
+		/// <summary>
+		/// Handles the smart magnify event.
+		/// </summary>
+		/// <param name="withEvent">The event.</param>
         public override void SmartMagnify (NSEvent withEvent)
         {
             base.SmartMagnify (withEvent);
         }
 
+		/// <summary>
+		/// Handles the swipe event.
+		/// </summary>
+		/// <param name="theEvent">The event.</param>
         public override void SwipeWithEvent (NSEvent theEvent)
         {
             base.SwipeWithEvent (theEvent);
