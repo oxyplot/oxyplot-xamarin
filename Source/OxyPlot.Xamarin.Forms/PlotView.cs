@@ -41,6 +41,10 @@ namespace OxyPlot.Xamarin.Forms
                 var message = "Renderer is not initialized.";
                 switch (Device.OS)
                 {
+                    case TargetPlatform.Windows:
+                        message +=
+                            "\nRemember to add `OxyPlot.Xamarin.Forms.Platform.UWP.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init(e);` in the Universal Windows app project.";
+                        break;
                     case TargetPlatform.WinPhone:
                         message +=
                             "\nRemember to add `OxyPlot.Xamarin.Forms.Platform.WP8.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the Windows Phone app project.";
