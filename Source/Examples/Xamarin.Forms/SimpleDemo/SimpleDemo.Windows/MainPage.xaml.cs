@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace SimpleDemo.UWP
+namespace SimpleDemo.Windows
 {
     public sealed partial class MainPage
     {
