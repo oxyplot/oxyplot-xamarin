@@ -7,12 +7,12 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace OxyPlot.Mono.Mac
+namespace OxyPlot.MonoMac
 {
     using System;
 	using System.Drawing;
-    using MonoMac.Foundation;
-    using MonoMac.AppKit;
+    using global::MonoMac.Foundation;
+	using global::MonoMac.AppKit;
 
     using OxyPlot;
 
