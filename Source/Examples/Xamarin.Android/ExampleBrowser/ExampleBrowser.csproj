@@ -79,14 +79,6 @@
       <Project>{e965ba32-9561-4e2a-adb0-19487b25a939}</Project>
       <Name>OxyPlot.Xamarin.Android</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\OxyPlot\OxyPlot.csproj">
-      <Project>{7A0B35C0-DD17-4964-8E9A-44D6CECDC692}</Project>
-      <Name>OxyPlot</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ExampleLibrary\ExampleLibrary.csproj">
-      <Project>{FACB89E5-53A5-4748-9F5B-E0714EBB37B2}</Project>
-      <Name>ExampleLibrary</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
