@@ -15,23 +15,23 @@
     <dependencies>
       <group targetFramework="Xamarin.iOS10">
         <dependency id="OxyPlot.Xamarin.iOS" version="$version$"/>
-        <dependency id="Xamarin.Forms" version="2.3.1.114" />
+        <dependency id="Xamarin.Forms" version="2.3.3.180" />
       </group>
       <group targetFramework="MonoAndroid">
         <dependency id="OxyPlot.Xamarin.Android" version="$version$"/>
-        <dependency id="Xamarin.Forms" version="2.3.1.114" />
+        <dependency id="Xamarin.Forms" version="2.3.3.180" />
       </group>
       <group targetFramework="uap10.0">
         <dependency id="OxyPlot.Windows" version="1.0.0"/>
-        <dependency id="Xamarin.Forms" version="2.3.1.114" />
+        <dependency id="Xamarin.Forms" version="2.3.3.180" />
       </group>
       <group targetFramework="windowsphone8">
         <dependency id="OxyPlot.WP8" version="1.0.0"/>
-        <dependency id="Xamarin.Forms" version="2.3.1.114" />
+        <dependency id="Xamarin.Forms" version="2.3.3.180" />
       </group>
       <group>
         <dependency id="OxyPlot.Core" version="1.0.0"/>
-        <dependency id="Xamarin.Forms" version="2.3.1.114" />
+        <dependency id="Xamarin.Forms" version="2.3.3.180" />
       </group>
     </dependencies>
   </metadata>
