@@ -1,7 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## 1.0.0
+## [Unreleased]
+
+### Changed
+- OxyPlot.Xamarin.Android targets latest platform
+
+## 1.0.0 - 2017-01-08
 ### Added
 - Added MaximumRange to limit the zoom. (#401)
 - Created a new OxyPlot.Mobile NuGet package to combine the mobile platforms into a single package. (#362)
