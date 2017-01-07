@@ -14,11 +14,11 @@
     <tags>plotting plot charting chart xamarin forms android windows phone ios</tags>
     <dependencies>
       <group targetFramework="Xamarin.iOS10">
-        <dependency id="OxyPlot.Xamarin.iOS" version="[$version$]"/>
+        <dependency id="OxyPlot.Xamarin.iOS" version="$version$"/>
         <dependency id="Xamarin.Forms" version="2.3.1.114" />
       </group>
       <group targetFramework="MonoAndroid">
-        <dependency id="OxyPlot.Xamarin.Android" version="[$version$]"/>
+        <dependency id="OxyPlot.Xamarin.Android" version="$version$"/>
         <dependency id="Xamarin.Forms" version="2.3.1.114" />
       </group>
       <group targetFramework="uap10.0">
@@ -26,11 +26,11 @@
         <dependency id="Xamarin.Forms" version="2.3.1.114" />
       </group>
       <group targetFramework="windowsphone8">
-        <dependency id="OxyPlot.WP8" version="[$version$]"/>
+        <dependency id="OxyPlot.WP8" version="1.0.0"/>
         <dependency id="Xamarin.Forms" version="2.3.1.114" />
       </group>
       <group>
-        <dependency id="OxyPlot.Core" version="[1]"/>
+        <dependency id="OxyPlot.Core" version="1.0.0"/>
         <dependency id="Xamarin.Forms" version="2.3.1.114" />
       </group>
     </dependencies>

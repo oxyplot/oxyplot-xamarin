@@ -13,7 +13,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>xamarin iOS plotting plot charting chart</tags>
     <dependencies>
-      <dependency id="OxyPlot.Core" version="[1]"/>
+      <dependency id="OxyPlot.Core" version="1.0.0"/>
     </dependencies>
   </metadata>
   <files>
