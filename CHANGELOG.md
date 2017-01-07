@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## 1.0.0
 ### Added
 - Added MaximumRange to limit the zoom. (#401)
 - Created a new OxyPlot.Mobile NuGet package to combine the mobile platforms into a single package. (#362)
@@ -140,7 +140,7 @@ All notable changes to this project will be documented in this file.
 - Set Resolution in WinForms PngExporter (#754)
 - Axis should never go into infinite loop (#758)
 
-## [2014.1.546] - 2014-10-22
+## 2014.1.546 - 2014-10-22
 ### Added
 - Support data binding paths ("Point.X") (#210)
 - Support for Xamarin.Forms (#204)
@@ -164,5 +164,4 @@ All notable changes to this project will be documented in this file.
 - Add overridable Axis.FormatValueOverride (#181)
 - PngExporter text formatting (#170)
 
-[Unreleased]: https://github.com/oxyplot/oxyplot/compare/v2014.1.546...HEAD
-[2014.1.546]: https://github.com/oxyplot/oxyplot/compare/v2014.1.319...v2014.1.546
+[Unreleased]: https://github.com/oxyplot/oxyplot/compare/v1.0.0...HEAD
