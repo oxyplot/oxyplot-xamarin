@@ -32,7 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 Change log", "0 Change lo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 Documentation", "0 Documentation", "{43AD5530-D29C-4DFE-A8F1-40024B9282E7}"
 	ProjectSection(SolutionItems) = preProject
-		..\CONTRIBUTING.md = ..\CONTRIBUTING.md
+		..\.github\CONTRIBUTING.md = ..\.github\CONTRIBUTING.md
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
