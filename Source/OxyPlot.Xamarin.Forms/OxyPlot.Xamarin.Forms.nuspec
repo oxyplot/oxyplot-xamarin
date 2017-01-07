@@ -22,15 +22,15 @@
         <dependency id="Xamarin.Forms" version="2.3.3.180" />
       </group>
       <group targetFramework="uap10.0">
-        <dependency id="OxyPlot.Windows" version="1.0.0"/>
+        <dependency id="OxyPlot.Windows" version="2.0.0-unstable0956"/>
         <dependency id="Xamarin.Forms" version="2.3.3.180" />
       </group>
       <group targetFramework="windowsphone8">
-        <dependency id="OxyPlot.WP8" version="1.0.0"/>
+        <dependency id="OxyPlot.WP8" version="2.0.0-unstable0956"/>
         <dependency id="Xamarin.Forms" version="2.3.3.180" />
       </group>
       <group>
-        <dependency id="OxyPlot.Core" version="1.0.0"/>
+        <dependency id="OxyPlot.Core" version="2.0.0-unstable0956"/>
         <dependency id="Xamarin.Forms" version="2.3.3.180" />
       </group>
     </dependencies>
