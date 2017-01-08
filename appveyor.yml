@@ -2,10 +2,8 @@ pull_requests:
   do_not_increment_build_number: true
 
 install:
-  - cinst gitversion.portable --version=3.6.1 -y
+  - cinst gitversion.portable --version=3.6.4 -y
   - cinst gitlink --version=2.3.0 -y
-  - cinst android-sdk
-  - ps: Build\install-android-sdk.ps1
 
 before_build:
   - appveyor DownloadFile https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
