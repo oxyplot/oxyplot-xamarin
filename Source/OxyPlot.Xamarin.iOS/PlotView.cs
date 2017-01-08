@@ -11,9 +11,6 @@ namespace OxyPlot.Xamarin.iOS
 {
     using Foundation;
     using OxyPlot;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using UIKit;
 
     /// <summary>
@@ -32,8 +29,15 @@ namespace OxyPlot.Xamarin.iOS
         /// </summary>
         private IPlotController defaultController;
 
-        private PanZoomGestureRecognizer panZoomGesture = new PanZoomGestureRecognizer();
-		private UITapGestureRecognizer tapGesture = new UITapGestureRecognizer();
+        /// <summary>
+        /// The pan zoom gesture recognizer
+        /// </summary>
+        private readonly PanZoomGestureRecognizer panZoomGesture = new PanZoomGestureRecognizer();
+
+        /// <summary>
+        /// The tap gesture recognizer
+        /// </summary>
+        private readonly UITapGestureRecognizer tapGesture = new UITapGestureRecognizer();
                
         /// <summary>
         /// Initializes a new instance of the <see cref="OxyPlot.Xamarin.iOS.PlotView"/> class.
@@ -67,7 +71,7 @@ namespace OxyPlot.Xamarin.iOS
         /// </summary>
         /// <returns><c>true</c>, if new layout was used, <c>false</c> otherwise.</returns>
         [Export ("requiresConstraintBasedLayout")]
-        bool UseNewLayout ()
+        private bool UseNewLayout ()
         {
             return true;
         }
@@ -81,8 +85,8 @@ namespace OxyPlot.Xamarin.iOS
             this.BackgroundColor = UIColor.White;
             this.KeepAspectRatioWhenPinching = true;
 
-			this.panZoomGesture.AddTarget(HandlePanZoomGesture);
-			this.tapGesture.AddTarget(HandleTapGesture);
+			this.panZoomGesture.AddTarget(this.HandlePanZoomGesture);
+			this.tapGesture.AddTarget(this.HandleTapGesture);
 			//Prevent panZoom and tap gestures from being recognized simultaneously
 			this.tapGesture.RequireGestureRecognizerToFail(this.panZoomGesture);
 
@@ -351,26 +355,26 @@ namespace OxyPlot.Xamarin.iOS
 
         private void HandlePanZoomGesture()
         {
-            switch (panZoomGesture.State)
+            switch (this.panZoomGesture.State)
             {
                 case UIGestureRecognizerState.Began:
-                    ActualController.HandleTouchStarted(this, panZoomGesture.TouchEventArgs);
+                    this.ActualController.HandleTouchStarted(this, this.panZoomGesture.TouchEventArgs);
                     break;
                 case UIGestureRecognizerState.Changed:
-                    ActualController.HandleTouchDelta(this, panZoomGesture.TouchEventArgs);
+                    this.ActualController.HandleTouchDelta(this, this.panZoomGesture.TouchEventArgs);
                     break;
                 case UIGestureRecognizerState.Ended:
                 case UIGestureRecognizerState.Cancelled:
-                    ActualController.HandleTouchCompleted(this, panZoomGesture.TouchEventArgs);
+                    this.ActualController.HandleTouchCompleted(this, this.panZoomGesture.TouchEventArgs);
                     break;
             }
         }
 
 		private void HandleTapGesture()
 		{
-			var location = tapGesture.LocationInView(this);
-			ActualController.HandleTouchStarted(this, location.ToTouchEventArgs());
-			ActualController.HandleTouchCompleted(this, location.ToTouchEventArgs());
+			var location = this.tapGesture.LocationInView(this);
+            this.ActualController.HandleTouchStarted(this, location.ToTouchEventArgs());
+            this.ActualController.HandleTouchCompleted(this, location.ToTouchEventArgs());
 		}
     }
 }
