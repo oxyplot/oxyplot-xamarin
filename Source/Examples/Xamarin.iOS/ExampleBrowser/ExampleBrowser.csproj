@@ -67,6 +67,14 @@
     </IpaPackageName>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ExampleLibrary, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d3c5cdfc68b1b462, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\OxyPlot.ExampleLibrary.2.0.0-unstable0956\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\ExampleLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OxyPlot, Version=2.0.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\OxyPlot.Core.2.0.0-unstable0956\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\OxyPlot.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -75,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />

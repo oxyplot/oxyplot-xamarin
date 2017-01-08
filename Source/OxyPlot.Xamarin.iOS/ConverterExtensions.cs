@@ -39,30 +39,31 @@ namespace OxyPlot.Xamarin.iOS
         public static OxyTouchEventArgs ToTouchEventArgs(this UITouch touch, UIView view)
         {
             var location = touch.LocationInView(view);
-			return (location.ToTouchEventArgs());
+            return location.ToTouchEventArgs();
         }
 
-		/// <summary>
-		/// Converts <see cref="CoreGraphics.CGPoint" /> tap location to <see cref="OxyTouchEventArgs" />.
-		/// </summary>
-		/// <param name="location">The tap location.</param>
-		/// <returns>The converted arguments.</returns>
-		public static OxyTouchEventArgs ToTouchEventArgs(this CGPoint location)
-		{
-			return new OxyTouchEventArgs {
-				Position = new ScreenPoint(location.X, location.Y),
-				DeltaTranslation = new ScreenVector(0, 0),
-				DeltaScale = new ScreenVector(1, 1)
-			};
-		}
+        /// <summary>
+        /// Converts <see cref="CoreGraphics.CGPoint" /> tap location to <see cref="OxyTouchEventArgs" />.
+        /// </summary>
+        /// <param name="location">The tap location.</param>
+        /// <returns>The converted arguments.</returns>
+        public static OxyTouchEventArgs ToTouchEventArgs(this CGPoint location)
+        {
+            return new OxyTouchEventArgs
+            {
+                Position = new ScreenPoint(location.X, location.Y),
+                DeltaTranslation = new ScreenVector(0, 0),
+                DeltaScale = new ScreenVector(1, 1)
+            };
+        }
 
-		/// <summary>
-		/// Converts a <see cref="OxyColor" /> to a <see cref="CGColor" />.
-		/// </summary>
-		/// <param name="c">The color to convert.</param>
-		/// <returns>The converted color.</returns>
-		// ReSharper disable once InconsistentNaming
-		public static CGColor ToCGColor(this OxyColor c)
+        /// <summary>
+        /// Converts a <see cref="OxyColor" /> to a <see cref="CGColor" />.
+        /// </summary>
+        /// <param name="c">The color to convert.</param>
+        /// <returns>The converted color.</returns>
+        // ReSharper disable once InconsistentNaming
+        public static CGColor ToCGColor(this OxyColor c)
         {
             return new CGColor(c.R / 255f, c.G / 255f, c.B / 255f, c.A / 255f);
         }
@@ -87,14 +88,14 @@ namespace OxyPlot.Xamarin.iOS
         {
             switch (lineJoin)
             {
-            case LineJoin.Bevel:
-                return CGLineJoin.Bevel;
-            case LineJoin.Miter:
-                return CGLineJoin.Miter;
-            case LineJoin.Round:
-                return CGLineJoin.Round;
-            default:
-                throw new InvalidOperationException("Invalid join type.");
+                case LineJoin.Bevel:
+                    return CGLineJoin.Bevel;
+                case LineJoin.Miter:
+                    return CGLineJoin.Miter;
+                case LineJoin.Round:
+                    return CGLineJoin.Round;
+                default:
+                    throw new InvalidOperationException("Invalid join type.");
             }
         }
 
@@ -125,10 +126,10 @@ namespace OxyPlot.Xamarin.iOS
         /// <returns>The converted rectangle.</returns>
         public static CGRect ConvertAliased(this OxyRect rect)
         {
-            float x = 0.5f + (int)rect.Left;
-            float y = 0.5f + (int)rect.Top;
-            float ri = 0.5f + (int)rect.Right;
-            float bo = 0.5f + (int)rect.Bottom;
+            var x = 0.5f + (int)rect.Left;
+            var y = 0.5f + (int)rect.Top;
+            var ri = 0.5f + (int)rect.Right;
+            var bo = 0.5f + (int)rect.Bottom;
             return new CGRect(x, y, ri - x, bo - y);
         }
 

@@ -138,6 +138,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\OxyPlot.Xamarin.Forms.Platform.iOS\OxyPlot.Xamarin.Forms.Platform.iOS.csproj">
+      <Project>{6b6e500b-b75c-4a27-a73e-9f4de5fe6ed3}</Project>
+      <Name>OxyPlot.Xamarin.Forms.Platform.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
     <ProjectReference Include="..\SimpleDemo\SimpleDemo.csproj">
       <Project>{7f63f896-92ca-4b3d-b61d-de628dba7cf9}</Project>
       <Name>SimpleDemo</Name>

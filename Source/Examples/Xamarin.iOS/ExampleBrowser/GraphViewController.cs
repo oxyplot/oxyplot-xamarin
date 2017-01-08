@@ -10,7 +10,7 @@
 namespace ExampleBrowser
 {
     using System;
-    
+
     using CoreGraphics;
     using Foundation;
     using UIKit;
@@ -24,18 +24,17 @@ namespace ExampleBrowser
     {
         private readonly ExampleInfo exampleInfo;
 
-        private PlotView plotView;
+        private readonly PlotView plotView;
 
         public GraphViewController(ExampleInfo exampleInfo)
         {
             this.exampleInfo = exampleInfo;
-            this.plotView = new PlotView();
-            this.plotView.Model = exampleInfo.PlotModel;
+            this.plotView = new PlotView { Model = exampleInfo.PlotModel };
         }
 
         public override void LoadView()
         {
-			NavigationItem.RightBarButtonItem = new UIBarButtonItem(UIBarButtonSystemItem.Compose);
+            this.NavigationItem.RightBarButtonItem = new UIBarButtonItem(UIBarButtonSystemItem.Compose);
 
             // Only for iOS 7 and later?
             this.EdgesForExtendedLayout = UIRectEdge.None;
@@ -43,19 +42,19 @@ namespace ExampleBrowser
             this.View = this.plotView;
         }
 
-		public override void ViewDidAppear (bool animated)
-		{
-			base.ViewDidAppear (animated);
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
 
-			NavigationItem.RightBarButtonItem.Clicked += HandleEmailButton;
-		}
+            this.NavigationItem.RightBarButtonItem.Clicked += this.HandleEmailButton;
+        }
 
-		public override void ViewDidDisappear (bool animated)
-		{
-			base.ViewDidDisappear (animated);
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
 
-			NavigationItem.RightBarButtonItem.Clicked -= HandleEmailButton;
-		}
+            this.NavigationItem.RightBarButtonItem.Clicked -= this.HandleEmailButton;
+        }
 
         /// <summary>
         /// Handles device orientation changes.
@@ -67,41 +66,41 @@ namespace ExampleBrowser
             this.plotView.InvalidatePlot(false);
         }
 
-		private void HandleEmailButton(object sender, EventArgs args)
-		{
-			var actionSheet = new UIActionSheet("Email", null, "Cancel", "PNG", "PDF")
-			{
-				Style = UIActionSheetStyle.Default
-			};
+        private void HandleEmailButton(object sender, EventArgs args)
+        {
+            var actionSheet = new UIActionSheet("Email", null, "Cancel", "PNG", "PDF")
+            {
+                Style = UIActionSheetStyle.Default
+            };
 
-			actionSheet.Clicked += (s, e) =>
-			{
-				if (e.ButtonIndex > 1)
-					return;
+            actionSheet.Clicked += (s, e) =>
+            {
+                if (e.ButtonIndex > 1)
+                    return;
 
-				Email(e.ButtonIndex == 0 ? "png" : "pdf");
-			};
+                this.Email(e.ButtonIndex == 0 ? "png" : "pdf");
+            };
 
-			actionSheet.ShowInView(View);
-		}
+            actionSheet.ShowInView(View);
+        }
 
         private void Email(string exportType)
         {
             if (!MFMailComposeViewController.CanSendMail)
                 return;
 
-            var title = exampleInfo.Title + "." + exportType;
+            var title = this.exampleInfo.Title + "." + exportType;
             NSData nsData = null;
             string attachmentType = "text/plain";
             var rect = new CGRect(0, 0, 800, 600);
             switch (exportType)
             {
                 case "png":
-                    nsData = View.ToPng(rect);
+                    nsData = this.View.ToPng(rect);
                     attachmentType = "image/png";
                     break;
                 case "pdf":
-                    nsData = View.ToPdf(rect);
+                    nsData = this.View.ToPdf(rect);
                     attachmentType = "text/x-pdf";
                     break;
             }
@@ -109,7 +108,7 @@ namespace ExampleBrowser
             var mail = new MFMailComposeViewController();
             mail.SetSubject("OxyPlot - " + title);
             mail.SetMessageBody("Please find attached " + title, false);
-            mail.Finished += HandleMailFinished;
+            mail.Finished += this.HandleMailFinished;
             mail.AddAttachmentData(nsData, attachmentType, title);
 
             this.PresentViewController(mail, true, null);

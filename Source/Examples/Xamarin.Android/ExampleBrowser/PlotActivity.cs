@@ -26,13 +26,18 @@ namespace ExampleBrowser
             var category = this.Intent.GetStringExtra("category");
             var plot = this.Intent.GetStringExtra("plot");
 
-            var exampleInfo = ExampleLibrary.Examples.GetList().FirstOrDefault(ei => ei.Category == category && ei.Title == plot);
-            var model = exampleInfo.PlotModel;
-            this.Title = exampleInfo.Title;
 
             this.SetContentView(Resource.Layout.PlotActivity);
             var plotView = this.FindViewById<PlotView>(Resource.Id.plotview);
-            plotView.Model = model;
+
+            var exampleInfo = ExampleLibrary.Examples.GetList().FirstOrDefault(ei => ei.Category == category && ei.Title == plot);
+
+            if (exampleInfo != null)
+            {
+                var model = exampleInfo.PlotModel;
+                this.Title = exampleInfo.Title;
+                plotView.Model = model;
+            }
         }
     }
 }

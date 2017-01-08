@@ -4,7 +4,10 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Changed
-- OxyPlot.Xamarin.Android targets latest platform
+- OxyPlot.Xamarin.Android targets latest Android platform
+
+### Removed
+- OxyPlot.MonoTouch (#50)
 
 ## 1.0.0 - 2017-01-08
 ### Added
