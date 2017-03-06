@@ -1,4 +1,6 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Reflection;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
@@ -47,10 +49,24 @@ namespace SimpleDemo.UWP
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
+                List<Assembly> assembliesToInclude = new List<Assembly>();
 
-                Xamarin.Forms.Forms.Init(e);
+                //Now, add in all the assemblies your app uses
+                assembliesToInclude.Add(typeof(OxyPlot.PlotModel).GetTypeInfo().Assembly);
+                assembliesToInclude.Add(typeof(OxyPlot.PlotController).GetTypeInfo().Assembly); 
+                assembliesToInclude.Add(typeof(OxyPlot.Windows.PlotView).GetTypeInfo().Assembly);
+                assembliesToInclude.Add(typeof(OxyPlot.Xamarin.Forms.PlotView).GetTypeInfo().Assembly);
+                assembliesToInclude.Add(typeof(OxyPlot.Xamarin.Forms.Platform.UWP.PlotViewRenderer).GetTypeInfo().Assembly); // added most for good measure - workaround says add all classes - but only this one class should sufice
+
+                //Also do this for all your other 3rd party libraries
+
                 OxyPlot.Xamarin.Forms.Platform.UWP.PlotViewRenderer.Init();
-
+                try
+                {
+                    Xamarin.Forms.Forms.Init(e, assembliesToInclude);
+                    // replaces Xamarin.Forms.Forms.Init(e);
+                }
+                catch (Exception ex) { }
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
