@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:oxyplot="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+    xmlns:local="clr-namespace:NewDemo" 
+    x:Class="NewDemo.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SampleValueConverter x:Key="converter"></local:SampleValueConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <oxyplot:PlotView VerticalOptions="CenterAndExpand" x:Name="PlotView" Model="{Binding ., Converter={StaticResource converter}}" HeightRequest="200" WidthRequest="200"></oxyplot:PlotView>
+    </StackLayout>
+</ContentPage>
