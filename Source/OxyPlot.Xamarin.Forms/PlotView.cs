@@ -36,7 +36,7 @@ namespace OxyPlot.Xamarin.Forms
         /// <exception cref="InvalidOperationException">Renderer is not initialized</exception>
         public PlotView()
         {
-            if (!IsRendererInitialized)
+            if (!IsRendererInitialized && !DesignMode.IsDesignModeEnabled)
             {
                 var message = "Renderer is not initialized.";
                 switch (Device.RuntimePlatform)
