@@ -39,23 +39,26 @@ namespace OxyPlot.Xamarin.Forms
             if (!IsRendererInitialized)
             {
                 var message = "Renderer is not initialized.";
-                switch (Device.OS)
+                switch (Device.RuntimePlatform)
                 {
-                    case TargetPlatform.Windows:
+                    case Device.UWP:
                         message +=
                             "\nRemember to add `OxyPlot.Xamarin.Forms.Platform.UWP.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init(e);` in the Universal Windows app project.";
                         break;
-                    case TargetPlatform.WinPhone:
-                        message +=
-                            "\nRemember to add `OxyPlot.Xamarin.Forms.Platform.WP8.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the Windows Phone app project.";
-                        break;
-                    case TargetPlatform.Android:
+                    case Device.Android:
                         message +=
                             "\nRemember to add `OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the Android app project.";
                         break;
-                    case TargetPlatform.iOS:
+                    case Device.iOS:
                         message +=
                             "\nRemember to add `OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the iOS app project.";
+                        break;
+                    case Device.GTK:
+                    case Device.macOS:
+                    case Device.Tizen:
+                    case Device.WPF:
+                        message +=
+                            "\nRemember to add `OxyPlot.Xamarin.Forms.Platform.*.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the iOS app project.";
                         break;
                 }
                 throw new InvalidOperationException(message);
