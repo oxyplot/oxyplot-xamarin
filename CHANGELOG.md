@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Removed
 - OxyPlot.MonoTouch (#50)
+- OxyPlot.Xamarin.Forms.Platform.WP8 (#74)
 
 ## 1.0.0 - 2017-01-08
 ### Added
