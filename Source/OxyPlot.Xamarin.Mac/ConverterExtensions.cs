@@ -32,17 +32,6 @@ namespace OxyPlot.Xamarin.Mac
         }
 
         /// <summary>
-        /// Converts a <see cref="System.Drawing.PointF" /> to a <see cref="ScreenPoint" />.
-        /// </summary>
-        /// <param name="p">The point to convert.</param>
-		/// <param name="bounds">The bounds of the window.</param> 
-        /// <returns>The converted point.</returns>
-        public static ScreenPoint LocationToScreenPoint (this CGPoint p, CGRect bounds)
-        {
-            return new ScreenPoint (p.X, bounds.Height - p.Y);
-        }
-
-        /// <summary>
         /// Converts a <see cref="OxyColor" /> to a <see cref="CGColor" />.
         /// </summary>
         /// <param name="c">The color to convert.</param>
@@ -155,65 +144,6 @@ namespace OxyPlot.Xamarin.Mac
                 keys |= OxyModifierKeys.Control;
 
             return keys;
-        }
-
-		/// <summary>
-		/// Converts a <see cref="NSEvent" /> to a <see cref="OxyMouseDownEventArgs" />.
-		/// </summary>
-		/// <param name="theEvent">The event to convert.</param>
-		/// <param name="bounds">The bounds of the window.</param> 
-		/// <returns>The converted event arguments.</returns>
-        public static OxyMouseDownEventArgs ToMouseDownEventArgs (this NSEvent theEvent, CGRect bounds)
-        {
-            // https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSEvent_Class/Reference/Reference.html
-            return new OxyMouseDownEventArgs {
-                Position = theEvent.LocationInWindow.LocationToScreenPoint (bounds),
-                ChangedButton = theEvent.Type.ToButton (),
-                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys (),
-                ClickCount = (int)theEvent.ClickCount,
-            };
-        }
-
-		/// <summary>
-		/// Converts a <see cref="NSEvent" /> to a <see cref="OxyMouseEventArgs" />.
-		/// </summary>
-		/// <param name="theEvent">The event to convert.</param>
-		/// <param name="bounds">The bounds of the window.</param> 
-		/// <returns>The converted event arguments.</returns>
-        public static OxyMouseEventArgs ToMouseEventArgs (this NSEvent theEvent, CGRect bounds)
-        {
-            return new OxyMouseEventArgs {
-                Position = theEvent.LocationInWindow.LocationToScreenPoint (bounds),
-                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys (),
-            };
-        }
-
-		/// <summary>
-		/// Converts a <see cref="NSEvent" /> to a <see cref="OxyMouseWheelEventArgs" />.
-		/// </summary>
-		/// <param name="theEvent">The event to convert.</param>
-		/// <param name="bounds">The bounds of the window.</param> 
-		/// <returns>The converted event arguments.</returns>
-        public static OxyMouseWheelEventArgs ToMouseWheelEventArgs (this NSEvent theEvent, CGRect bounds)
-        {
-            return new OxyMouseWheelEventArgs {
-                Delta = (int)theEvent.ScrollingDeltaY,
-                Position = theEvent.LocationInWindow.LocationToScreenPoint (bounds),
-                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys (),
-            };
-        }
-
-		/// <summary>
-		/// Converts a <see cref="NSEvent" /> to a <see cref="OxyKeyEventArgs" />.
-		/// </summary>
-		/// <param name="theEvent">The event to convert.</param>
-		/// <returns>The converted event arguments.</returns>
-        public static OxyKeyEventArgs ToKeyEventArgs (this NSEvent theEvent)
-        {
-            return new OxyKeyEventArgs {
-                Key = theEvent.KeyCode.ToKey (),
-                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys (),
-            };
         }
 
 		/// <summary>
