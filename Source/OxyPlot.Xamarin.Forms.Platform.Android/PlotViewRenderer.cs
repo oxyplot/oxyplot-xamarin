@@ -1,4 +1,5 @@
-﻿using OxyPlot.Xamarin.Forms;
+﻿using Android.Content;
+using OxyPlot.Xamarin.Forms;
 using OxyPlot.Xamarin.Forms.Platform.Android;
 
 using global::Xamarin.Forms;
@@ -29,9 +30,8 @@ namespace OxyPlot.Xamarin.Forms.Platform.Android
         /// <summary>
         /// Initializes a new instance of the <see cref="PlotViewRenderer"/> class.
         /// </summary>
-        public PlotViewRenderer()
+        public PlotViewRenderer(Context context) : base(context)
         {
-            // Do not delete
         }
 
         /// <summary>
