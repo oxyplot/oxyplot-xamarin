@@ -73,6 +73,7 @@ namespace OxyPlot.Xamarin.Mac
         /// </summary>
         private void Initialize() {
             this.AcceptsTouchEvents = true;
+            this.WantsLayer = true;
         }
 
         /// <summary>
@@ -213,16 +214,16 @@ namespace OxyPlot.Xamarin.Mac
 
             if (actualModel != null && !actualModel.Background.IsUndefined())
             {
-                // this.BackgroundColor = actualModel.Background.ToUIColor();
+                this.WantsLayer = true;
+                this.Layer.BackgroundColor = actualModel.Background.ToCGColor();
             }
             else
             {
                 // Use white as default background color
-                // this.BackgroundColor = UIColor.White;
+                this.Layer.BackgroundColor = OxyColors.White.ToCGColor();
             }
 
             this.NeedsDisplay = true;
-//            this.SetNeedsDisplay();
         }
 
         /// <summary>
