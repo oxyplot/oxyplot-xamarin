@@ -11,4 +11,4 @@ Package | Targets
 [OxyPlot.Xamarin.Android](https://www.nuget.org/packages/OxyPlot.Xamarin.Android) | Xamarin.Android (MonoAndroid)
 [OxyPlot.Xamarin.iOS](https://www.nuget.org/packages/OxyPlot.Xamarin.iOS) | Xamarin.iOS (iOS10)
 [OxyPlot.Xamarin.Mac](https://www.nuget.org/packages/OxyPlot.Xamarin.Mac) | Xamarin.Mac (Mac20)
-[OxyPlot.Xamarin.Forms](https://www.nuget.org/packages/OxyPlot.Xamarin.Forms) | Xamarin.Forms (Android, iOS, UWP, WP8)
+[OxyPlot.Xamarin.Forms](https://www.nuget.org/packages/OxyPlot.Xamarin.Forms) | Xamarin.Forms (Android, iOS, UWP)

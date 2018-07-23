@@ -13,11 +13,11 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>xamarin iOS plotting plot charting chart</tags>
     <dependencies>
-      <dependency id="OxyPlot.Core" version="2.0.0-unstable0956"/>
+      <dependency id="OxyPlot.Core" version="2.0.0-unstable1035"/>
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\Output\Xamarin.iOS\OxyPlot.Xamarin.iOS.???" target="lib/Xamarin.iOS10"/>
+    <file src="bin\Release\OxyPlot.Xamarin.iOS.???" target="lib/Xamarin.iOS10"/>
 
     <file src="..\..\LICENSE" />
     <file src="..\..\AUTHORS" />

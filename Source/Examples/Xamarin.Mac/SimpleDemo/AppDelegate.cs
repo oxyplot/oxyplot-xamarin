@@ -1,34 +1,23 @@
-﻿using System;
+﻿using AppKit;
+using Foundation;
 
 namespace SimpleDemo
 {
-    using Foundation;
-    using AppKit;
-
-    public partial class AppDelegate : NSApplicationDelegate
+    [Register("AppDelegate")]
+    public class AppDelegate : NSApplicationDelegate
     {
-        MainWindowController mainWindowController;
-
-        public AppDelegate ()
+        public AppDelegate()
         {
         }
 
-        public override void DidFinishLaunching (NSNotification notification)
+        public override void DidFinishLaunching(NSNotification notification)
         {
-            var menu = new NSMenu ();
+            // Insert code here to initialize your application
+        }
 
-            var menuItem = new NSMenuItem ();
-            menu.AddItem (menuItem);
-
-            var appMenu = new NSMenu ();
-            var quitItem = new NSMenuItem ("Quit", "q", (s, e) => NSApplication.SharedApplication.Terminate (menu));
-            appMenu.AddItem (quitItem);
-
-            menuItem.Submenu = appMenu;
-            NSApplication.SharedApplication.MainMenu = menu;
-
-            mainWindowController = new MainWindowController ();
-            mainWindowController.Window.MakeKeyAndOrderFront (this);
+        public override void WillTerminate(NSNotification notification)
+        {
+            // Insert code here to tear down your application
         }
     }
 }

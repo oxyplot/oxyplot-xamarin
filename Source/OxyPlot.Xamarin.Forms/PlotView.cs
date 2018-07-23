@@ -36,28 +36,35 @@ namespace OxyPlot.Xamarin.Forms
         /// <exception cref="InvalidOperationException">Renderer is not initialized</exception>
         public PlotView()
         {
-            if (!IsRendererInitialized)
+            if (!IsRendererInitialized && !DesignMode.IsDesignModeEnabled)
             {
                 var message = "Renderer is not initialized.";
-                switch (Device.OS)
+                switch (Device.RuntimePlatform)
                 {
-                    case TargetPlatform.Windows:
+                    case Device.UWP:
                         message +=
-                            "\nRemember to add `OxyPlot.Xamarin.Forms.Platform.UWP.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init(e);` in the Universal Windows app project.";
+                            "\nRemember to call `OxyPlot.Xamarin.Forms.Platform.UWP.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init(e);` in the Universal Windows app project.";
                         break;
-                    case TargetPlatform.WinPhone:
+                    case Device.Android:
                         message +=
-                            "\nRemember to add `OxyPlot.Xamarin.Forms.Platform.WP8.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the Windows Phone app project.";
+                            "\nRemember to call `OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the Android app project.";
                         break;
-                    case TargetPlatform.Android:
+                    case Device.iOS:
                         message +=
-                            "\nRemember to add `OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the Android app project.";
+                            "\nRemember to call `OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the iOS app project.";
                         break;
-                    case TargetPlatform.iOS:
+                    case Device.macOS:
                         message +=
-                            "\nRemember to add `OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the iOS app project.";
+                            "\nRemember to call `OxyPlot.Xamarin.Forms.Platform.MacOS.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the iOS app project.";
+                        break;
+                    case Device.GTK:
+                    case Device.Tizen:
+                    case Device.WPF:
+                        message +=
+                            "\nRemember to call `OxyPlot.Xamarin.Forms.Platform.*.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the iOS app project.";
                         break;
                 }
+
                 throw new InvalidOperationException(message);
             }
         }
