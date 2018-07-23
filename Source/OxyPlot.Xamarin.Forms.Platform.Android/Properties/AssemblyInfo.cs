@@ -1,12 +1,11 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-[assembly: AssemblyTitle("OxyPlot.Xamarin.Forms.Platform.UWP")]
-[assembly: AssemblyDescription("OxyPlot for Windows Universal (UWP)")]
+// Information about this assembly is defined by the following attributes. 
+// Change them to the values specific to your project.
+
+[assembly: AssemblyTitle("OxyPlot.Xamarin.Forms.Platform.Android")]
+[assembly: AssemblyDescription("OxyPlot for Xamarin.Forms.Platform.Android")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("OxyPlot")]
 [assembly: AssemblyProduct("OxyPlot")]
@@ -19,4 +18,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyInformationalVersion("0.0.1-alpha")]
 [assembly: AssemblyFileVersion("0.0.1")]
 
-[assembly: ComVisible(false)]
+// The following attributes are used to specify the signing key for the assembly, 
+// if desired. See the Mono documentation for more information about signing.
+
+//[assembly: AssemblyDelaySign(false)]
+//[assembly: AssemblyKeyFile("")]
