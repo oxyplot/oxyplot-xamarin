@@ -314,7 +314,7 @@ namespace OxyPlot.Xamarin.Mac
         public override void MouseDown (NSEvent theEvent)
         {
             base.MouseDown (theEvent);
-            this.ActualController.HandleMouseDown (this, theEvent.ToMouseDownEventArgs(this.Bounds));
+            this.ActualController.HandleMouseDown (this, this.ToMouseDownEventArgs (theEvent));
         }
 
 		/// <summary>
@@ -324,7 +324,7 @@ namespace OxyPlot.Xamarin.Mac
         public override void MouseDragged (NSEvent theEvent)
         {
             base.MouseDragged (theEvent);
-            this.ActualController.HandleMouseMove (this, theEvent.ToMouseEventArgs (this.Bounds));
+            this.ActualController.HandleMouseMove (this, this.ToMouseEventArgs (theEvent));
         }
 
 		/// <summary>
@@ -334,7 +334,7 @@ namespace OxyPlot.Xamarin.Mac
         public override void MouseMoved (NSEvent theEvent)
         {
             base.MouseMoved (theEvent);
-            this.ActualController.HandleMouseMove (this, theEvent.ToMouseEventArgs (this.Bounds));
+            this.ActualController.HandleMouseMove (this, this.ToMouseEventArgs (theEvent));
         }
 
 		/// <summary>
@@ -344,7 +344,7 @@ namespace OxyPlot.Xamarin.Mac
         public override void MouseUp (NSEvent theEvent)
         {
             base.MouseUp (theEvent);
-            this.ActualController.HandleMouseUp (this, theEvent.ToMouseEventArgs (this.Bounds));
+            this.ActualController.HandleMouseUp (this, this.ToMouseEventArgs (theEvent));
         }
 
 		/// <summary>
@@ -354,7 +354,7 @@ namespace OxyPlot.Xamarin.Mac
         public override void MouseEntered (NSEvent theEvent)
         {
             base.MouseEntered (theEvent);
-            this.ActualController.HandleMouseEnter (this, theEvent.ToMouseEventArgs (this.Bounds));
+            this.ActualController.HandleMouseEnter (this, this.ToMouseEventArgs (theEvent));
         }
 
 		/// <summary>
@@ -364,7 +364,7 @@ namespace OxyPlot.Xamarin.Mac
         public override void MouseExited (NSEvent theEvent)
         {
             base.MouseExited (theEvent);
-            this.ActualController.HandleMouseLeave (this, theEvent.ToMouseEventArgs (this.Bounds));
+            this.ActualController.HandleMouseLeave (this, this.ToMouseEventArgs (theEvent));
         }
 
 		/// <summary>
@@ -375,7 +375,7 @@ namespace OxyPlot.Xamarin.Mac
         {
             // TODO: use scroll events to pan?
             base.ScrollWheel (theEvent);
-            this.ActualController.HandleMouseWheel (this, theEvent.ToMouseWheelEventArgs (this.Bounds));
+            this.ActualController.HandleMouseWheel (this, this.ToMouseWheelEventArgs (theEvent));
         }
 
 		/// <summary>
@@ -403,7 +403,7 @@ namespace OxyPlot.Xamarin.Mac
         public override void KeyDown (NSEvent theEvent)
         {
             base.KeyDown (theEvent);
-            this.ActualController.HandleKeyDown (this, theEvent.ToKeyEventArgs ());
+            this.ActualController.HandleKeyDown (this, this.ToKeyEventArgs(theEvent));
         }
 
 		/// <summary>
@@ -442,6 +442,51 @@ namespace OxyPlot.Xamarin.Mac
         public override void SwipeWithEvent (NSEvent theEvent)
         {
             base.SwipeWithEvent (theEvent);
+        }
+
+        private OxyMouseDownEventArgs ToMouseDownEventArgs (NSEvent theEvent)
+        {
+            // https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSEvent_Class/Reference/Reference.html
+            return new OxyMouseDownEventArgs {
+                Position = this.GetRelativePosition(theEvent),
+                ChangedButton = theEvent.Type.ToButton (),
+                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys (),
+                ClickCount = (int)theEvent.ClickCount,
+            };
+        }
+
+        private OxyMouseEventArgs ToMouseEventArgs (NSEvent theEvent)
+        {
+            return new OxyMouseEventArgs {
+                Position = this.GetRelativePosition(theEvent),
+                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys (),
+            };
+        }
+
+        private OxyMouseWheelEventArgs ToMouseWheelEventArgs (NSEvent theEvent)
+        {
+            return new OxyMouseWheelEventArgs {
+                Delta = (int)theEvent.ScrollingDeltaY,
+                Position = this.GetRelativePosition(theEvent),
+                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys (),
+            };
+        }
+
+        private OxyKeyEventArgs ToKeyEventArgs (NSEvent theEvent)
+        {
+            return new OxyKeyEventArgs {
+                Key = theEvent.KeyCode.ToKey (),
+                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys (),
+            };
+        }
+
+        /// <summary>
+        /// Gets the event's position relative to this view.
+        /// </summary>
+        private ScreenPoint GetRelativePosition (NSEvent p)
+        {
+            var relativePoint = this.ConvertPointFromView (p.LocationInWindow, null);
+            return new ScreenPoint (relativePoint.X, relativePoint.Y);
         }
     }
 }
