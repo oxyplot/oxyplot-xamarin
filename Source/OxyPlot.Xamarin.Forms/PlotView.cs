@@ -38,12 +38,11 @@ namespace OxyPlot.Xamarin.Forms
         {
             if (!IsRendererInitialized && !DesignMode.IsDesignModeEnabled)
             {
+                var platform = Device.RuntimePlatform == Device.macOS ? "MacOS" : Device.RuntimePlatform.ToString();
                 throw new InvalidOperationException(
-                    "Renderer is not initialized.\nRemember to call `OxyPlot.Xamarin.Forms.Platform."
-                    + Device.RuntimePlatform.ToString()
-                    + ".PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init(e);` in the "
-                    + Device.RuntimePlatform.ToString()
-                    + " app project.");
+                    "Renderer is not initialized.\nRemember to call `OxyPlot.Xamarin.Forms.Platform." + platform +
+                    ".PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init(e);` in the " + platform +
+                    " app project.");
             }
         }
 
