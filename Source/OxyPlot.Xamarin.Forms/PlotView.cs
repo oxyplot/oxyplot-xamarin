@@ -38,34 +38,11 @@ namespace OxyPlot.Xamarin.Forms
         {
             if (!IsRendererInitialized && !DesignMode.IsDesignModeEnabled)
             {
-                var message = "Renderer is not initialized.";
-                switch (Device.RuntimePlatform)
-                {
-                    case Device.UWP:
-                        message +=
-                            "\nRemember to call `OxyPlot.Xamarin.Forms.Platform.UWP.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init(e);` in the Universal Windows app project.";
-                        break;
-                    case Device.Android:
-                        message +=
-                            "\nRemember to call `OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the Android app project.";
-                        break;
-                    case Device.iOS:
-                        message +=
-                            "\nRemember to call `OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the iOS app project.";
-                        break;
-                    case Device.macOS:
-                        message +=
-                            "\nRemember to call `OxyPlot.Xamarin.Forms.Platform.MacOS.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the iOS app project.";
-                        break;
-                    case Device.GTK:
-                    case Device.Tizen:
-                    case Device.WPF:
-                        message +=
-                            "\nRemember to call `OxyPlot.Xamarin.Forms.Platform.*.PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init();` in the iOS app project.";
-                        break;
-                }
-
-                throw new InvalidOperationException(message);
+                var platform = Device.RuntimePlatform == Device.macOS ? "MacOS" : Device.RuntimePlatform.ToString();
+                throw new InvalidOperationException(
+                    "Renderer is not initialized.\nRemember to call `OxyPlot.Xamarin.Forms.Platform." + platform +
+                    ".PlotViewRenderer.Init();` after `Xamarin.Forms.Forms.Init(e);` in the " + platform +
+                    " app project.");
             }
         }
 
