@@ -7,6 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OxyPlot.Xamarin.Mac", "OxyP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDemo", "Examples\Xamarin.Mac\SimpleDemo\SimpleDemo.csproj", "{A0A832A8-AD29-4E43-B844-73FA2551BC6E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E31F586D-B50F-4A66-B907-1EAA56BE79DC}"
+	ProjectSection(SolutionItems) = preProject
+		..\CHANGELOG.md = ..\CHANGELOG.md
+		..\CONTRIBUTORS = ..\CONTRIBUTORS
+		..\GitVersionConfig.yaml = ..\GitVersionConfig.yaml
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+		..\AUTHORS = ..\AUTHORS
+		..\appveyor.yml = ..\appveyor.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
