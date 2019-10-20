@@ -6,7 +6,6 @@
 //   Implements a <see cref="IRenderContext"/> for CoreGraphics.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-using AppKit;
 
 namespace OxyPlot.Xamarin.Mac
 {
@@ -14,6 +13,7 @@ namespace OxyPlot.Xamarin.Mac
     using System.Collections.Generic;
     using System.Linq;
 
+    using AppKit;
     using CoreGraphics;
     using CoreText;
     using Foundation;
@@ -294,8 +294,7 @@ namespace OxyPlot.Xamarin.Mac
 
                     this.gctx.TextPosition = new CGPoint (0, 0);
 
-                    nfloat lineHeight, delta;
-                    this.GetFontMetrics (font, out lineHeight, out delta);
+                    this.GetFontMetrics(font, out nfloat lineHeight, out nfloat delta);
 
                     var bounds = textLine.GetImageBounds (this.gctx);
 
@@ -369,8 +368,7 @@ namespace OxyPlot.Xamarin.Mac
                 Font = font
             })) {
                 using (var textLine = new CTLine (attributedString)) {
-                    nfloat lineHeight, delta;
-                    this.GetFontMetrics (font, out lineHeight, out delta);
+                    this.GetFontMetrics(font, out nfloat lineHeight, out nfloat delta);
 
                     // the text position must be set to get the correct bounds
                     this.gctx.TextPosition = new CGPoint (0, 0);
@@ -469,8 +467,8 @@ namespace OxyPlot.Xamarin.Mac
         private CTFont GetCachedFont (string fontName, double fontSize)
         {
             var key = fontName + fontSize.ToString ("0.###");
-            CTFont font;
-            if (this.fonts.TryGetValue (key, out font)) {
+            if (this.fonts.TryGetValue(key, out CTFont font))
+            {
                 return font;
             }
 
@@ -530,14 +528,16 @@ namespace OxyPlot.Xamarin.Mac
                 this.imagesInUse.Add (source);
             }
 
-            NSImage src;
-            if (!this.imageCache.TryGetValue (source, out src)) {
-                using (var ms = new System.IO.MemoryStream (source.GetData ())) {
-                    src = NSImage.FromStream (ms);
+            if (!this.imageCache.TryGetValue(source, out NSImage src))
+            {
+                using (var ms = new System.IO.MemoryStream(source.GetData()))
+                {
+                    src = NSImage.FromStream(ms);
                 }
 
-                if (src != null) {
-                    this.imageCache.Add (source, src);
+                if (src != null)
+                {
+                    this.imageCache.Add(source, src);
                 }
             }
 

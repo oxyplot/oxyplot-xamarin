@@ -9,9 +9,8 @@
 
 namespace OxyPlot.Xamarin.Mac
 {
-    using System;
-    using Foundation;
     using AppKit;
+    using Foundation;
 
     using OxyPlot;
 
@@ -485,8 +484,10 @@ namespace OxyPlot.Xamarin.Mac
         /// </summary>
         private ScreenPoint GetRelativePosition (NSEvent p)
         {
+            // OSX has the origin in the lower left corner
             var relativePoint = this.ConvertPointFromView (p.LocationInWindow, null);
-            return new ScreenPoint (relativePoint.X, relativePoint.Y);
+            var y = this.Bounds.Height - relativePoint.Y;
+            return new ScreenPoint (relativePoint.X, y);
         }
     }
 }

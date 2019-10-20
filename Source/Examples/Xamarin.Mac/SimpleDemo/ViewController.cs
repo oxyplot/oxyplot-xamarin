@@ -1,17 +1,17 @@
-﻿using System;
-
-using AppKit;
-using CoreGraphics;
-using Foundation;
-
-using OxyPlot;
-using OxyPlot.Axes;
-using OxyPlot.Series;
-
-using OxyPlot.Xamarin.Mac;
-
-namespace SimpleDemo
+﻿namespace SimpleDemo
 {
+    using System;
+
+    using AppKit;
+    using CoreGraphics;
+    using Foundation;
+
+    using OxyPlot;
+    using OxyPlot.Axes;
+    using OxyPlot.Series;
+
+    using OxyPlot.Xamarin.Mac;
+
     public partial class ViewController : NSViewController
     {
         public ViewController(IntPtr handle) : base(handle)

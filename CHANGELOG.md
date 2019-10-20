@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file.
 - OxyPlot.Xamarin.Forms.Platform.WP8 (#74)
 - OxyPlot.MonoMac (#49)
 
+### Fixed
+- Vertical panning on Mac (#95)
+
 ## 1.0.0 - 2017-01-08
 ### Added
 - Added MaximumRange to limit the zoom. (#401)
