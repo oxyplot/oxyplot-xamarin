@@ -1,8 +1,8 @@
-﻿using AppKit;
-using Foundation;
-
 namespace SimpleDemo
 {
+    using AppKit;
+    using Foundation;
+
     [Register("AppDelegate")]
     public class AppDelegate : NSApplicationDelegate
     {
