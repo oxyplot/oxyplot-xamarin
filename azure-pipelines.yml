@@ -1,5 +1,5 @@
 pool:
-  vmImage: 'macOS 10.13'
+  vmImage: 'macOS-latest'
 
 steps:
 # To manually select a Xamarin SDK version on the Hosted macOS agent, enable this script with the SDK version you want to target
@@ -14,9 +14,14 @@ steps:
   inputs:
     restoreSolution: 'Source/OxyPlot.Xamarin.Forms.sln'
 
+- task: VSBuild@1
+  inputs:
+    solution: 'Source/OxyPlot.Xamarin.Forms.sln' 
+    configuration: 'Release'
+
 - task: XamariniOS@2
   inputs:
-    solutionFile: 'Source/OxyPlot.Xamarin.Forms.sln'
+    solutionFile: 'Source/OxyPlot.Xamarin.iOS.sln'
     configuration: 'Release'
     buildForSimulator: true
     packageApp: false
