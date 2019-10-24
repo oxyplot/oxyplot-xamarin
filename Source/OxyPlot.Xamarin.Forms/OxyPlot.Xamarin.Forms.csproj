@@ -2,10 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>OxyPlot.Xamarin.Forms</PackageId>
+    <PackageVersion>2.0.0-preview0001</PackageVersion>
+    <Authors>OxyPlot contributors</Authors>
+    <Copyright>OxyPlot contributors</Copyright>
+    <PackageIconUrl>https://raw.githubusercontent.com/oxyplot/oxyplot/master/Icons/OxyPlot_128.png</PackageIconUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/oxyplot/oxyplot/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://oxyplot.github.io/</PackageProjectUrl>
+    <Title>OxyPlot for Xamarin.Forms</Title>
+    <Description>OxyPlot is a plotting library for .NET. This package targets Xamarin.Forms.</Description>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OxyPlot.Core" Version="2.0.0-unstable1035" />
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.637273" />
+    <PackageReference Include="OxyPlot.Core" Version="2.0.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>
