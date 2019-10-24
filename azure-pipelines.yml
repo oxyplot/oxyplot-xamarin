@@ -12,12 +12,7 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    restoreSolution: 'Source/OxyPlot.Xamarin.Forms.sln'
-
-- task: VSBuild@1
-  inputs:
-    solution: 'Source/OxyPlot.Xamarin.Forms.sln' 
-    configuration: 'Release'
+    restoreSolution: 'Source/OxyPlot.Xamarin.iOS.sln'
 
 - task: XamariniOS@2
   inputs:
