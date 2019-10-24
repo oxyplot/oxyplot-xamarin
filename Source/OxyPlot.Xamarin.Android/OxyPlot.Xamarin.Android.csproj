@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -13,7 +14,16 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>OxyPlot.Xamarin.Android</PackageId>
+    <PackageVersion>2.0.0-preview0001</PackageVersion>
+    <Authors>OxyPlot contributors</Authors>
+    <Copyright>OxyPlot contributors</Copyright>
+    <PackageIconUrl>https://raw.githubusercontent.com/oxyplot/oxyplot/master/Icons/OxyPlot_128.png</PackageIconUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/oxyplot/oxyplot/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://oxyplot.github.io/</PackageProjectUrl>
+    <Title>OxyPlot for Xamarin.Android</Title>
+    <Description>OxyPlot is a plotting library for .NET. This package targets Xamarin.Android.</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,7 +55,7 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
     <Reference Include="OxyPlot">
-      <HintPath>..\packages\OxyPlot.Core.2.0.0-unstable1035\lib\netstandard1.0\OxyPlot.dll</HintPath>
+      <HintPath>..\packages\OxyPlot.Core.2.0.0\lib\netstandard1.0\OxyPlot.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -64,4 +74,5 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
 </Project>

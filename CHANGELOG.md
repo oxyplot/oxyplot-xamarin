@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Changed
+- Update to Xamarin.Forms 4.3.0
 - OxyPlot.Xamarin.Android targets latest Android platform
 
 ### Removed
