@@ -71,7 +71,6 @@ namespace OxyPlot.Xamarin.Mac
         /// Initialize the view.
         /// </summary>
         private void Initialize() {
-            this.AcceptsTouchEvents = true;
             this.WantsLayer = true;
         }
 
@@ -450,7 +449,7 @@ namespace OxyPlot.Xamarin.Mac
                 Position = this.GetRelativePosition(theEvent),
                 ChangedButton = theEvent.Type.ToButton (),
                 ModifierKeys = theEvent.ModifierFlags.ToModifierKeys (),
-                ClickCount = (int)theEvent.ClickCount,
+                ClickCount = (int)theEvent.ClickCount
             };
         }
 
@@ -458,7 +457,7 @@ namespace OxyPlot.Xamarin.Mac
         {
             return new OxyMouseEventArgs {
                 Position = this.GetRelativePosition(theEvent),
-                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys (),
+                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys ()
             };
         }
 
@@ -467,7 +466,7 @@ namespace OxyPlot.Xamarin.Mac
             return new OxyMouseWheelEventArgs {
                 Delta = (int)theEvent.ScrollingDeltaY,
                 Position = this.GetRelativePosition(theEvent),
-                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys (),
+                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys ()
             };
         }
 
@@ -475,7 +474,7 @@ namespace OxyPlot.Xamarin.Mac
         {
             return new OxyKeyEventArgs {
                 Key = theEvent.KeyCode.ToKey (),
-                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys (),
+                ModifierKeys = theEvent.ModifierFlags.ToModifierKeys ()
             };
         }
 
