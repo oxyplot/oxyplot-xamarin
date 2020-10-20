@@ -12,6 +12,7 @@ namespace OxyPlot.Xamarin.Android
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using global::Android.App;
     using global::Android.Graphics;
 
     /// <summary>
@@ -279,6 +280,16 @@ namespace OxyPlot.Xamarin.Android
             this.paint.Reset();
             {
                 this.paint.TextSize = this.Convert(fontSize);
+                if (!string.IsNullOrEmpty(fontFamily))
+                {
+                    string dir = System.IO.Path.GetDirectoryName(fontFamily);
+                    string family = System.IO.Path.GetFileNameWithoutExtension(fontFamily);
+                    if (Application.Context.Assets.List(dir).Contains($"{family}.ttf"))
+                    {
+                        Typeface tf = Typeface.CreateFromAsset(Application.Context.Assets, System.IO.Path.Combine(dir, $"{family}.ttf"));
+                        this.paint.SetTypeface(tf);
+                    }                    
+                }
                 this.SetFill(fill);
 
                 float width;
@@ -354,6 +365,16 @@ namespace OxyPlot.Xamarin.Android
             {
                 this.paint.AntiAlias = true;
                 this.paint.TextSize = this.Convert(fontSize);
+                if (!string.IsNullOrEmpty(fontFamily))
+                {
+                    string dir = System.IO.Path.GetDirectoryName(fontFamily);
+                    string fn = System.IO.Path.GetFileNameWithoutExtension(fontFamily);
+                    if (Application.Context.Assets.List(dir).Contains($"{fn}.ttf"))
+                    {
+                        Typeface font = Typeface.CreateFromAsset(Application.Context.Assets, System.IO.Path.Combine(dir, $"{fn}.ttf"));
+                        this.paint.SetTypeface(font);
+                    }
+                }
                 float lineHeight, delta;
                 this.GetFontMetrics(this.paint, out lineHeight, out delta);
                 this.paint.GetTextBounds(text, 0, text.Length, this.bounds);
