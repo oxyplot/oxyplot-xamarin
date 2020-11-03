@@ -280,16 +280,7 @@ namespace OxyPlot.Xamarin.Android
             this.paint.Reset();
             {
                 this.paint.TextSize = this.Convert(fontSize);
-                if (!string.IsNullOrEmpty(fontFamily))
-                {
-                    string dir = System.IO.Path.GetDirectoryName(fontFamily);
-                    string family = System.IO.Path.GetFileNameWithoutExtension(fontFamily);
-                    if (Application.Context.Assets.List(dir).Contains($"{family}.ttf"))
-                    {
-                        Typeface tf = Typeface.CreateFromAsset(Application.Context.Assets, System.IO.Path.Combine(dir, $"{family}.ttf"));
-                        this.paint.SetTypeface(tf);
-                    }                    
-                }
+                this.SetCustomFont(fontFamily);
                 this.SetFill(fill);
 
                 float width;
@@ -365,22 +356,14 @@ namespace OxyPlot.Xamarin.Android
             {
                 this.paint.AntiAlias = true;
                 this.paint.TextSize = this.Convert(fontSize);
-                if (!string.IsNullOrEmpty(fontFamily))
-                {
-                    string dir = System.IO.Path.GetDirectoryName(fontFamily);
-                    string fn = System.IO.Path.GetFileNameWithoutExtension(fontFamily);
-                    if (Application.Context.Assets.List(dir).Contains($"{fn}.ttf"))
-                    {
-                        Typeface font = Typeface.CreateFromAsset(Application.Context.Assets, System.IO.Path.Combine(dir, $"{fn}.ttf"));
-                        this.paint.SetTypeface(font);
-                    }
-                }
+                this.SetCustomFont(fontFamily);
+
                 float lineHeight, delta;
                 this.GetFontMetrics(this.paint, out lineHeight, out delta);
                 this.paint.GetTextBounds(text, 0, text.Length, this.bounds);
                 return new OxySize(this.bounds.Width() / this.FontScale, lineHeight / this.FontScale);
             }
-        }
+        }        
 
         /// <summary>
         /// Sets the clip rectangle.
@@ -511,6 +494,24 @@ namespace OxyPlot.Xamarin.Android
         private float ConvertAliased(double x)
         {
             return (int)(x * this.Scale) + 0.5f;
+        }
+
+        /// <summary>
+        /// Sets the typeface of all text to the font family
+        /// </summary>
+        /// <param name="fontFamily">The font family</param>
+        private void SetCustomFont(string fontFamily)
+        {
+            if (!string.IsNullOrEmpty(fontFamily))
+            {
+                string dir = System.IO.Path.GetDirectoryName(fontFamily);
+                string fn = System.IO.Path.GetFileNameWithoutExtension(fontFamily);
+                if (Application.Context.Assets.List(dir).Contains($"{fn}.ttf"))
+                {
+                    Typeface font = Typeface.CreateFromAsset(Application.Context.Assets, System.IO.Path.Combine(dir, $"{fn}.ttf"));
+                    this.paint.SetTypeface(font);
+                }
+            }
         }
 
         /// <summary>
