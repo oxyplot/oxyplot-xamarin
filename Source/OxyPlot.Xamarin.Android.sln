@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OxyPlot.Xamarin.Android", "OxyPlot.Xamarin.Android\OxyPlot.Xamarin.Android.csproj", "{E965BA32-9561-4E2A-ADB0-19487B25A939}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OxyPlot.Xamarin.Android", "OxyPlot.Xamarin.Android\OxyPlot.Xamarin.Android.csproj", "{3296D69F-F4B7-44A5-AEB9-7A179E65F8DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{7108C4BE-2199-4119-B26B-53740CD2F243}"
 EndProject
@@ -15,10 +15,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E965BA32-9561-4E2A-ADB0-19487B25A939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E965BA32-9561-4E2A-ADB0-19487B25A939}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E965BA32-9561-4E2A-ADB0-19487B25A939}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E965BA32-9561-4E2A-ADB0-19487B25A939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3296D69F-F4B7-44A5-AEB9-7A179E65F8DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3296D69F-F4B7-44A5-AEB9-7A179E65F8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3296D69F-F4B7-44A5-AEB9-7A179E65F8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3296D69F-F4B7-44A5-AEB9-7A179E65F8DD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{47BDB77E-C1AD-4784-ACA7-FC2D70C3A2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{47BDB77E-C1AD-4784-ACA7-FC2D70C3A2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47BDB77E-C1AD-4784-ACA7-FC2D70C3A2BC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
@@ -31,6 +31,9 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{47BDB77E-C1AD-4784-ACA7-FC2D70C3A2BC} = {7108C4BE-2199-4119-B26B-53740CD2F243}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9F87285-AD0B-478F-8BCB-BBC169698F9D}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Examples\XamarinAndroid\ExampleBrowser\ExampleBrowser.csproj
