@@ -1,0 +1,52 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>OxyPlot.Xamarin.Forms</id>
+    <title>OxyPlot for Xamarin.Forms (iOS, Android and Windows Phone)</title>
+    <version>$version$</version>
+    <authors>Oystein Bjorke</authors>
+    <description>OxyPlot is a plotting library for .NET. This package includes a portable library for Xamarin.Forms apps and platform-specific libraries for iOS, Android and Windows Phone.</description>
+    <releaseNotes></releaseNotes>
+    <licenseUrl>https://raw.githubusercontent.com/oxyplot/oxyplot/master/LICENSE</licenseUrl>
+    <projectUrl>http://oxyplot.org/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/oxyplot/oxyplot/develop/Icons/OxyPlot_128.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>plotting plot charting chart xamarin forms android windows phone ios</tags>
+    <dependencies>
+      <group targetFramework="Xamarin.iOS10">
+        <dependency id="OxyPlot.Xamarin.iOS" version="$version$"/>
+        <dependency id="Xamarin.Forms" version="3.0.0.482510" />
+      </group>
+      <group targetFramework="MonoAndroid">
+        <dependency id="OxyPlot.Xamarin.Android" version="$version$"/>
+        <dependency id="Xamarin.Forms" version="3.0.0.482510" />
+      </group>
+      <group targetFramework="uap10.0">
+        <dependency id="OxyPlot.Windows" version="2.0.0-unstable1035"/>
+        <dependency id="Xamarin.Forms" version="3.0.0.482510" />
+      </group>
+      <group>
+        <dependency id="OxyPlot.Core" version="2.0.0-unstable1035"/>
+        <dependency id="Xamarin.Forms" version="3.0.0.482510" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\OxyPlot.Xamarin.Forms.???" target="lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10" />
+
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\Release\OxyPlot.Xamarin.Forms.Platform.iOS.???" target="lib/Xamarin.iOS10" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\Release\OxyPlot.Xamarin.Forms.???" target="lib/Xamarin.iOS10" />
+
+    <file src="..\Xamarin.Forms.Platform.Android\bin\Release\OxyPlot.Xamarin.Forms.Platform.Android.???" target="lib/MonoAndroid10" />
+    <file src="..\Xamarin.Forms.Platform.Android\bin\Release\OxyPlot.Xamarin.Forms.???" target="lib/MonoAndroid10" />
+
+    <file src="..\Xamarin.Forms.Platform.UWP\bin\Release\OxyPlot.Xamarin.Forms.Platform.UWP.???" target="lib/uap10.0" />
+    <file src="..\Xamarin.Forms.Platform.UWP\bin\Release\OxyPlot.Xamarin.Forms.???" target="lib/uap10.0" />
+
+    <file src="..\..\LICENSE" />
+    <file src="..\..\AUTHORS" />
+    <file src="..\..\CONTRIBUTORS" />
+    <file src="..\..\README.md" />
+    <file src="..\..\CHANGELOG.md" />
+  </files>
+</package>
