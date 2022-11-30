@@ -50,8 +50,8 @@
     <file src="..\OxyPlot.Xamarin.Forms.Platform.MacOS\bin\Release\OxyPlot.Xamarin.Forms.Platform.Mac.???" target="lib/Xamarin.Mac20" />
     <file src="..\OxyPlot.Xamarin.Forms.Platform.MacOS\bin\Release\OxyPlot.Xamarin.Forms.???" target="lib/Xamarin.Mac20" />
 
-    <file src="..\OxyPlot.Xamarin.Forms.Platform.UWP\bin\Release\OxyPlot.Xamarin.Forms.Platform.UWP.???" target="lib/uap10.0" />
-    <file src="..\OxyPlot.Xamarin.Forms.Platform.UWP\bin\Release\OxyPlot.Xamarin.Forms.???" target="lib/uap10.0" />
+    <file src="..\OxyPlot.Xamarin.Forms.Platform.UWP\bin\x64\Release\OxyPlot.Xamarin.Forms.Platform.UWP.???" target="lib/uap10.0" />
+    <file src="..\OxyPlot.Xamarin.Forms.Platform.UWP\bin\x64\Release\OxyPlot.Xamarin.Forms.???" target="lib/uap10.0" />
 
     <file src="..\..\LICENSE" />
     <file src="..\..\AUTHORS" />
