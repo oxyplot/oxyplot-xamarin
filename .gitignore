@@ -3,3 +3,4 @@ obj/
 .vs/
 packages/
 Resource.designer.cs
+.DS_Store
