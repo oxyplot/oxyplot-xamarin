@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
     <PropertyGroup>
         <TargetFramework>uap10.0</TargetFramework>
         <Description>OxyPlot is a plotting library for .NET. This is package contains the UWP implementation.</Description>
