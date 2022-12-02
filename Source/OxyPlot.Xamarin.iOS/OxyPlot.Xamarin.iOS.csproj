@@ -57,7 +57,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="System.IO.Compression" />
     <Reference Include="OxyPlot">
       <HintPath>..\packages\OxyPlot.Core.2.0.0\lib\netstandard1.0\OxyPlot.dll</HintPath>
     </Reference>
