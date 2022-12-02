@@ -2,7 +2,8 @@ OxyPlot is a cross-platform plotting library for .NET
 
 This repository contains the implementations for Xamarin.Android, Xamarin.iOS, Xamarin.Mac and Xamarin.Forms.
 
-[![Build status](https://img.shields.io/appveyor/ci/objorke/oxyplot-xamarin.svg)](https://ci.appveyor.com/project/objorke/oxyplot-xamarin)
+[![GHA status](https://github.com/oxyplot/oxyplot-xamarin/actions/workflows/dotnet.yml/badge.svg)](https://github.com/oxyplot/oxyplot-xamarin/actions/workflows/dotnet.yml?branch=develop)
+[![AppVeyor status](https://img.shields.io/appveyor/ci/objorke/oxyplot-xamarin.svg)](https://ci.appveyor.com/project/objorke/oxyplot-xamarin)
 
 #### NuGet packages
 
