@@ -77,7 +77,7 @@ namespace OxyPlot.Windows
         /// <summary>
         /// Identifies the <see cref="CornerRadius"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
+        new public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
             "CornerRadius", typeof(double), typeof(TrackerControl), new PropertyMetadata(0.0));
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace OxyPlot.Windows
         /// <summary>
         /// Gets or sets the corner radius (only used when ShowPoint=<c>false</c>).
         /// </summary>
-        public double CornerRadius
+        new public double CornerRadius
         {
             get
             {
@@ -530,12 +530,7 @@ namespace OxyPlot.Windows
                     Y = dy * contentSize.Height
                 };
 
-#if WPF
-            ScreenPoint pos = this.Position;
-#endif
-#if SILVERLIGHT || NETFX_CORE
             Point pos = this.Position.ToPoint(true);
-#endif
 
             if (this.horizontalLine != null)
             {
