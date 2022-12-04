@@ -73,9 +73,6 @@
     <Compile Include="PlotViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\OxyPlot.Xamarin.Forms\OxyPlot.Xamarin.Forms.csproj">
       <Project>{B63C5F8C-61C8-4E69-93D6-F49F816D3746}</Project>
       <Name>OxyPlot.Xamarin.Forms</Name>
