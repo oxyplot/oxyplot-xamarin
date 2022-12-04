@@ -35,7 +35,7 @@ namespace OxyPlot.Xamarin.Forms.Platform.MacOS
         /// Initializes the renderer.
         /// </summary>
         /// <remarks>This method must be called before a <see cref="T:PlotView" /> is used.</remarks>
-        public static void Init()
+        new public static void Init()
         {
             OxyPlot.Xamarin.Forms.PlotView.IsRendererInitialized = true;
         }
