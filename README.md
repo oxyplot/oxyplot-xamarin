@@ -4,7 +4,6 @@ This repository contains the implementation for Xamarin (supporting Android, iOS
 
 ![License](https://img.shields.io/github/license/oxyplot/oxyplot-xamarin)
 [![GHA status](https://github.com/oxyplot/oxyplot-xamarin/actions/workflows/dotnet.yml/badge.svg)](https://github.com/oxyplot/oxyplot-xamarin/actions/workflows/dotnet.yml?branch=develop)
-[![AppVeyor status](https://img.shields.io/appveyor/ci/objorke/oxyplot-xamarin.svg)](https://ci.appveyor.com/project/objorke/oxyplot-xamarin)
 
 #### NuGet packages
 
