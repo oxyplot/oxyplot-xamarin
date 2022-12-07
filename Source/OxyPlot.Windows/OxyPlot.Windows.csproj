@@ -13,7 +13,7 @@
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
     <ItemGroup>
-        <None Include="..\..\Icons\OxyPlot_128.png" Pack="true" PackagePath="\" />
+        <None Include="..\..\OxyPlot_128.png" Pack="true" PackagePath="\" />
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="OxyPlot.Core" Version="2.0.0" />
