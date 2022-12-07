@@ -58,7 +58,7 @@ namespace OxyPlot.Xamarin.iOS
             UIGraphics.BeginPDFContext(data, rect, null);
             UIGraphics.BeginPDFPage();
             view.Draw(rect);
-            UIGraphics.EndPDFContent();
+            UIGraphics.EndPDFContext();
 
             return data;
         }

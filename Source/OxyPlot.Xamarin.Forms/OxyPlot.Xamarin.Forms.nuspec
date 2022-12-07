@@ -7,9 +7,9 @@
     <authors>Oystein Bjorke</authors>
     <description>OxyPlot is a plotting library for .NET. This package includes a portable library for Xamarin.Forms apps and platform-specific libraries for iOS, Android and Windows Phone.</description>
     <releaseNotes></releaseNotes>
-    <licenseUrl>https://raw.githubusercontent.com/oxyplot/oxyplot/master/LICENSE</licenseUrl>
+    <license type="expression">MIT</license>
     <projectUrl>http://oxyplot.org/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/oxyplot/oxyplot/develop/Icons/OxyPlot_128.png</iconUrl>
+    <icon>OxyPlot_128.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>plotting plot charting chart xamarin forms android windows phone ios</tags>
     <dependencies>
@@ -53,6 +53,7 @@
     <file src="..\OxyPlot.Xamarin.Forms.Platform.UWP\bin\x64\Release\OxyPlot.Xamarin.Forms.Platform.UWP.???" target="lib/uap10.0" />
     <file src="..\OxyPlot.Xamarin.Forms.Platform.UWP\bin\x64\Release\OxyPlot.Xamarin.Forms.???" target="lib/uap10.0" />
 
+    <file src="..\..\OxyPlot_128.png" target="" />
     <file src="..\..\LICENSE" />
     <file src="..\..\AUTHORS" />
     <file src="..\..\CONTRIBUTORS" />
