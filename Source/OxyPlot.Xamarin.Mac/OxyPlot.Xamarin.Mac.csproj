@@ -110,9 +110,6 @@
     <PackageReference Include="System.Runtime.Extensions">
       <Version>4.3.1</Version>
     </PackageReference>
-    <PackageReference Include="System.Runtime.Handles">
-      <Version>4.3.0</Version>
-    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
