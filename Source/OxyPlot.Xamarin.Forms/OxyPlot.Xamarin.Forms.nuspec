@@ -8,7 +8,8 @@
     <description>OxyPlot is a plotting library for .NET. This package includes a portable library for Xamarin.Forms apps and platform-specific libraries for iOS, Android and Windows Phone.</description>
     <releaseNotes></releaseNotes>
     <license type="expression">MIT</license>
-    <projectUrl>http://oxyplot.org/</projectUrl>
+    <projectUrl>https://oxyplot.github.io/</projectUrl>
+    <repository type="git" url="https://github.com/oxyplot/oxyplot-xamarin.git" />
     <icon>OxyPlot_128.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>plotting plot charting chart xamarin forms android windows phone ios</tags>
