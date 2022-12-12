@@ -76,9 +76,6 @@
     <Compile Include="PlotView.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NETStandard.Library">
-      <Version>2.0.3</Version>
-    </PackageReference>
     <PackageReference Include="NuGet.Build.Packaging">
       <Version>0.2.2</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
