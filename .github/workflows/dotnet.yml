@@ -27,7 +27,7 @@ jobs:
     - name: Build
       run: msbuild Source/OxyPlot.Xamarin.Forms.sln -p:RestorePackages=false -p:Configuration=Release
     - name: Package
-      run: nuget pack Source/OxyPlot.Xamarin.Forms/OxyPlot.Xamarin.Forms.nuspec -Version $(git describe) -outputdirectory Artifacts
+      run: nuget pack Source/OxyPlot.Xamarin.Forms.nuspec -Version $(git describe) -outputdirectory Artifacts
     - name: Upload packages
       uses: actions/upload-artifact@v3
       with:
