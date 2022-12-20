@@ -11,6 +11,7 @@
     <projectUrl>https://oxyplot.github.io/</projectUrl>
     <repository type="git" url="https://github.com/oxyplot/oxyplot-xamarin.git" />
     <icon>OxyPlot_128.png</icon>
+    <readme>README.md</readme>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>plotting plot charting chart xamarin forms android ios mac uwp</tags>
     <dependencies>
@@ -64,7 +65,7 @@
     <file src="..\LICENSE" />
     <file src="..\AUTHORS" />
     <file src="..\CONTRIBUTORS" />
-    <file src="..\README.md" />
+    <file src="..\README.md" target="" />
     <file src="..\CHANGELOG.md" />
   </files>
 </package>
