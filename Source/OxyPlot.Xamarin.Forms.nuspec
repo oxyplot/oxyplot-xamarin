@@ -2,17 +2,17 @@
 <package>
   <metadata>
     <id>OxyPlot.Xamarin.Forms</id>
-    <title>OxyPlot for Xamarin.Forms (iOS, Android and Windows Phone)</title>
+    <title>OxyPlot for Xamarin (Android, iOS, Mac and UWP)</title>
     <version>2.0.0-beta.1</version>
-    <authors>Oystein Bjorke</authors>
-    <description>OxyPlot is a plotting library for .NET. This package includes a portable library for Xamarin.Forms apps and platform-specific libraries for iOS, Android and Windows Phone.</description>
+    <authors>Oystein Bjorke, Janus Weil</authors>
+    <description>OxyPlot is a plotting library for .NET. This package includes a portable library for Xamarin.Forms apps and platform-specific libraries for Android, iOS, Mac and UWP.</description>
     <releaseNotes></releaseNotes>
     <license type="expression">MIT</license>
     <projectUrl>https://oxyplot.github.io/</projectUrl>
     <repository type="git" url="https://github.com/oxyplot/oxyplot-xamarin.git" />
     <icon>OxyPlot_128.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <tags>plotting plot charting chart xamarin forms android windows phone ios</tags>
+    <tags>plotting plot charting chart xamarin forms android ios mac uwp</tags>
     <dependencies>
       <group targetFramework="Xamarin.iOS10">
         <dependency id="OxyPlot.Core" version="2.0.0"/>
