@@ -75,6 +75,20 @@ namespace OxyPlot.Xamarin.Mac
         }
 
         /// <summary>
+        /// Dispose the instance.
+        /// </summary>
+        /// <param name="disposing">Is the instance disposing.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                this.Model = null;
+            }
+
+            base.Dispose(disposing);
+        }
+
+        /// <summary>
         /// Gets or sets the <see cref="PlotModel"/> to show in the view. 
         /// </summary>
         /// <value>The <see cref="PlotModel"/>.</value>
