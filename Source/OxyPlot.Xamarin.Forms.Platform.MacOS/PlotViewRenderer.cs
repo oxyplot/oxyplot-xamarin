@@ -52,6 +52,8 @@ namespace OxyPlot.Xamarin.Forms.Platform.MacOS
                 return;
             }
 
+            this.DetachModelFromView();
+
             var plotView = new PlotView
             {
                 Model = this.Element.Model,
@@ -78,6 +80,7 @@ namespace OxyPlot.Xamarin.Forms.Platform.MacOS
 
             if (e.PropertyName == Xamarin.Forms.PlotView.ModelProperty.PropertyName)
             {
+                this.DetachModelFromView();
                 this.Control.Model = this.Element.Model;
             }
 
@@ -93,6 +96,15 @@ namespace OxyPlot.Xamarin.Forms.Platform.MacOS
 
             if (e.PropertyName == VisualElement.IsVisibleProperty.PropertyName) {
                 this.Control.InvalidatePlot (false);
+            }
+        }
+
+        void DetachModelFromView()
+        {
+            var model = base.Element.Model as OxyPlot.IPlotModel;
+            if (model != null)
+            {
+                model.AttachPlotView(null);
             }
         }
     }
