@@ -32,15 +32,15 @@ namespace SimpleDemo
                         },
                         Series =
                         {
-                            new ColumnSeries
+                            new BarSeries
                             {
                                 Items =
                                 {
-                                    new ColumnItem {Value = 3},
-                                    new ColumnItem {Value = 14},
-                                    new ColumnItem {Value = 11},
-                                    new ColumnItem {Value = 12},
-                                    new ColumnItem {Value = 7}
+                                    new BarItem {Value = 3},
+                                    new BarItem {Value = 14},
+                                    new BarItem {Value = 11},
+                                    new BarItem {Value = 12},
+                                    new BarItem {Value = 7}
                                 }
                             }
                         }
