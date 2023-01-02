@@ -29,7 +29,7 @@ namespace OxyPlot.Windows
     /// <summary>
     /// Implements <see cref="IRenderContext" /> for <see cref="Canvas" />.
     /// </summary>
-    public class RenderContext : IRenderContext
+    public class RenderContext : ClippingRenderContext
     {
         /// <summary>
         /// The brush cache.
@@ -101,12 +101,6 @@ namespace OxyPlot.Windows
         /// </summary>
         /// <value>The width.</value>
         public double Width { get; private set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the context renders to screen.
-        /// </summary>
-        /// <value><c>true</c> if the context renders to screen; otherwise, <c>false</c>.</value>
-        public bool RendersToScreen { get; set; }
 
         /// <summary>
         /// Draws an ellipse.
@@ -185,20 +179,14 @@ namespace OxyPlot.Windows
         /// <param name="thickness">The stroke thickness.</param>
         /// <param name="dashArray">The dash array.</param>
         /// <param name="lineJoin">The line join type.</param>
-        /// <param name="aliased">if set to <c>true</c> the shape will be aliased.</param>
-        public void DrawLine(
-            IList<ScreenPoint> points,
-            OxyColor stroke,
-            double thickness,
-            double[] dashArray,
-            LineJoin lineJoin,
-            bool aliased)
+        public override void DrawLine(IList<ScreenPoint> points, OxyColor stroke, double thickness, EdgeRenderingMode erm, double[] dashArray, LineJoin lineJoin)
         {
             var e = new Polyline
             {
                 CompositeMode = ElementCompositeMode.SourceOver
             };
 
+            bool aliased = this.ShouldUseAntiAliasingForLine(erm, points);
             this.SetStroke(e, stroke, thickness, lineJoin, dashArray, aliased);
 
             var pc = new PointCollection();
@@ -270,20 +258,14 @@ namespace OxyPlot.Windows
         /// <param name="dashArray">The dash array.</param>
         /// <param name="lineJoin">The line join type.</param>
         /// <param name="aliased">if set to <c>true</c> the shape will be aliased.</param>
-        public void DrawPolygon(
-            IList<ScreenPoint> points,
-            OxyColor fill,
-            OxyColor stroke,
-            double thickness,
-            double[] dashArray,
-            LineJoin lineJoin,
-            bool aliased)
+        public override void DrawPolygon(IList<ScreenPoint> points, OxyColor fill, OxyColor stroke, double thickness, EdgeRenderingMode erm, double[] dashArray, LineJoin lineJoin)
         {
             var po = new Polygon
             {
                 CompositeMode = ElementCompositeMode.SourceOver
             };
 
+            bool aliased = this.ShouldUseAntiAliasingForLine(erm, points);
             this.SetStroke(po, stroke, thickness, lineJoin, dashArray, aliased);
 
             if (fill.IsVisible())
@@ -434,7 +416,7 @@ namespace OxyPlot.Windows
         /// <param name="halign">The horizontal alignment.</param>
         /// <param name="valign">The vertical alignment.</param>
         /// <param name="maxSize">The maximum size of the text.</param>
-        public void DrawText(
+        public override void DrawText(
             ScreenPoint p,
             string text,
             OxyColor fill,
@@ -532,7 +514,7 @@ namespace OxyPlot.Windows
         /// <param name="fontSize">Size of the font.</param>
         /// <param name="fontWeight">The font weight.</param>
         /// <returns>The text size.</returns>
-        public OxySize MeasureText(string text, string fontFamily, double fontSize, double fontWeight)
+        public override OxySize MeasureText(string text, string fontFamily, double fontSize, double fontWeight)
         {
             if (string.IsNullOrEmpty(text))
             {
@@ -562,7 +544,7 @@ namespace OxyPlot.Windows
         /// Sets the tool tip for the following items.
         /// </summary>
         /// <param name="text">The text in the tooltip.</param>
-        public void SetToolTip(string text)
+        public override void SetToolTip(string text)
         {
             this.currentToolTip = text;
         }
@@ -581,7 +563,7 @@ namespace OxyPlot.Windows
         /// <param name="destHeight">The height of the drawn image.</param>
         /// <param name="opacity">The opacity.</param>
         /// <param name="interpolate">interpolate if set to <c>true</c>.</param>
-        public void DrawImage(
+        public override void DrawImage(
             OxyImage source,
             double srcX,
             double srcY,
@@ -633,17 +615,16 @@ namespace OxyPlot.Windows
         /// </summary>
         /// <param name="clippingRect">The clipping rectangle.</param>
         /// <returns>True if the clipping rectangle was set.</returns>
-        public bool SetClip(OxyRect clippingRect)
+        protected override void SetClip(OxyRect clippingRect)
         {
             this.clipRect = clippingRect.ToRect(false);
             this.clip = true;
-            return true;
         }
 
         /// <summary>
         /// Resets the clipping rectangle.
         /// </summary>
-        public void ResetClip()
+        protected override void ResetClip()
         {
             this.clip = false;
         }
@@ -652,7 +633,7 @@ namespace OxyPlot.Windows
         /// Cleans up resources not in use.
         /// </summary>
         /// <remarks>This method is called at the end of each rendering.</remarks>
-        public void CleanUp()
+        public override void CleanUp()
         {
             // Find the images in the cache that has not been used since last call to this method
             var imagesToRelease = this.imageCache.Keys.Where(i => !this.imagesInUse.Contains(i)).ToList();

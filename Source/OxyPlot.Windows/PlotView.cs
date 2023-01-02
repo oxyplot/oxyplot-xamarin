@@ -914,7 +914,8 @@ namespace OxyPlot.Windows
 
             if (this.ActualModel != null)
             {
-                ((IPlotModel)this.ActualModel).Render(this.renderContext, this.canvas.ActualWidth, this.canvas.ActualHeight);
+                OxyRect rect = new OxyRect(0, 0, canvas.ActualWidth, canvas.ActualHeight);
+                ((IPlotModel)this.ActualModel).Render(this.renderContext, rect);
             }
         }
 
