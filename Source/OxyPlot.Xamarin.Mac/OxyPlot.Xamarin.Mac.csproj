@@ -66,6 +66,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="netstandard" />
   </ItemGroup>
   <ItemGroup Condition="'$(OS)' != 'Windows_NT'">
     <Reference Include="Xamarin.Mac" />
