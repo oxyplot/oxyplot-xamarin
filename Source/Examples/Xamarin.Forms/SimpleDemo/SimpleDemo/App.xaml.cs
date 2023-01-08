@@ -24,16 +24,18 @@ namespace SimpleDemo
                 {
                     Model = new PlotModel
                     {
-                        Title = "OxyPlot in Xamarin Forms.",
+                        Title = "OxyPlot in Xamarin.Forms",
                         Axes =
                         {
-                            new CategoryAxis {Position = AxisPosition.Bottom},
-                            new LinearAxis {Position = AxisPosition.Left, MinimumPadding = 0}
+                            new CategoryAxis {Position = AxisPosition.Bottom, Key = "Y" },
+                            new LinearAxis {Position = AxisPosition.Left, Key = "X", MinimumPadding = 0}
                         },
                         Series =
                         {
                             new BarSeries
                             {
+                                XAxisKey = "X",
+                                YAxisKey = "Y",
                                 Items =
                                 {
                                     new BarItem {Value = 3},
