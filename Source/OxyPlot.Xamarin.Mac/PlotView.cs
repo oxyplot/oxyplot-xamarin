@@ -300,8 +300,9 @@ namespace OxyPlot.Xamarin.Mac
                 // TODO: scale font matrix??
                 using (var renderer = new CoreGraphicsRenderContext(context))
                 {
-                        ((IPlotModel)this.model).Render(renderer, dirtyRect.Width, dirtyRect.Height);
-                    }
+                    OxyRect orect = new OxyRect(0, 0, dirtyRect.Width, dirtyRect.Height);
+                    ((IPlotModel)this.model).Render(renderer, orect);
+                }
             }
         }
 

@@ -21,7 +21,7 @@ namespace OxyPlot.Xamarin.Mac
     /// <summary>
     /// Implements a <see cref="IRenderContext"/> for CoreGraphics.
     /// </summary>
-    public class CoreGraphicsRenderContext : RenderContextBase, IDisposable
+    public class CoreGraphicsRenderContext : ClippingRenderContext, IDisposable
     {
         /// <summary>
         /// The images in use.
@@ -69,10 +69,11 @@ namespace OxyPlot.Xamarin.Mac
         /// <param name="fill">The fill color.</param>
         /// <param name="stroke">The stroke color.</param>
         /// <param name="thickness">The thickness.</param>
-        public override void DrawEllipse (OxyRect rect, OxyColor fill, OxyColor stroke, double thickness)
+        public override void DrawEllipse (OxyRect rect, OxyColor fill, OxyColor stroke, double thickness, EdgeRenderingMode erm)
         {
-            this.SetAlias (false);
-            var convertedRectangle = rect.Convert ();
+            bool aliased = this.ShouldUseAntiAliasingForEllipse(erm);
+            this.SetAlias (aliased);
+            var convertedRectangle = aliased ? rect.ConvertAliased() : rect.Convert ();
             if (fill.IsVisible ()) {
                 this.SetFill (fill);
                 using (var path = new CGPath ()) {
@@ -150,17 +151,16 @@ namespace OxyPlot.Xamarin.Mac
         /// </summary>
         /// <param name="rect">The clip rectangle.</param>
         /// <returns>True if the clip rectangle was set.</returns>
-        public override bool SetClip (OxyRect rect)
+        protected override void SetClip (OxyRect rect)
         {
             this.gctx.SaveState ();
             this.gctx.ClipToRect (rect.Convert ());
-            return true;
         }
 
         /// <summary>
         /// Resets the clip rectangle.
         /// </summary>
-        public override void ResetClip ()
+        protected override void ResetClip ()
         {
             this.gctx.RestoreState ();
         }
@@ -173,10 +173,10 @@ namespace OxyPlot.Xamarin.Mac
         /// <param name="thickness">The stroke thickness.</param>
         /// <param name="dashArray">The dash array.</param>
         /// <param name="lineJoin">The line join type.</param>
-        /// <param name="aliased">if set to <c>true</c> the shape will be aliased.</param>
-        public override void DrawLine (IList<ScreenPoint> points, OxyColor stroke, double thickness, double[] dashArray, LineJoin lineJoin, bool aliased)
+        public override void DrawLine (IList<ScreenPoint> points, OxyColor stroke, double thickness, EdgeRenderingMode erm, double[] dashArray, LineJoin lineJoin)
         {
             if (stroke.IsVisible () && thickness > 0) {
+                bool aliased = this.ShouldUseAntiAliasingForLine(erm, points);
                 this.SetAlias (aliased);
                 this.SetStroke (stroke, thickness, dashArray, lineJoin);
 
@@ -199,9 +199,9 @@ namespace OxyPlot.Xamarin.Mac
         /// <param name="thickness">The stroke thickness.</param>
         /// <param name="dashArray">The dash array.</param>
         /// <param name="lineJoin">The line join type.</param>
-        /// <param name="aliased">If set to <c>true</c> the shape will be aliased.</param>
-        public override void DrawPolygon (IList<ScreenPoint> points, OxyColor fill, OxyColor stroke, double thickness, double[] dashArray, LineJoin lineJoin, bool aliased)
+        public override void DrawPolygon (IList<ScreenPoint> points, OxyColor fill, OxyColor stroke, double thickness, EdgeRenderingMode erm, double[] dashArray, LineJoin lineJoin)
         {
+            bool aliased = this.ShouldUseAntiAliasingForLine(erm, points);
             this.SetAlias (aliased);
             var convertedPoints = (aliased ? points.Select (p => p.ConvertAliased ()) : points.Select (p => p.Convert ())).ToArray ();
             if (fill.IsVisible ()) {
@@ -235,10 +235,11 @@ namespace OxyPlot.Xamarin.Mac
         /// <param name="fill">The fill color.</param>
         /// <param name="stroke">The stroke color.</param>
         /// <param name="thickness">The stroke thickness.</param>
-        public override void DrawRectangle (OxyRect rect, OxyColor fill, OxyColor stroke, double thickness)
+        public override void DrawRectangle (OxyRect rect, OxyColor fill, OxyColor stroke, double thickness, EdgeRenderingMode erm)
         {
-            this.SetAlias (true);
-            var convertedRect = rect.ConvertAliased ();
+            bool aliased = this.ShouldUseAntiAliasingForRect(erm);
+            this.SetAlias (aliased);
+            var convertedRect = aliased ? rect.ConvertAliased () : rect.Convert();
 
             if (fill.IsVisible ()) {
                 this.SetFill (fill);
