@@ -1,0 +1,19 @@
+
+{
+  "solution": {
+    "path": "OxyPlot.Xamarin.Forms.sln",
+    "projects": [
+      "OxyPlot.Xamarin.Android/OxyPlot.Xamarin.Android.csproj",
+      "OxyPlot.Xamarin.iOS/OxyPlot.Xamarin.iOS.csproj",
+      "OxyPlot.Xamarin.Mac/OxyPlot.Xamarin.Mac.csproj",
+      "OxyPlot.Xamarin.Forms/OxyPlot.Xamarin.Forms.csproj",
+      "OxyPlot.Xamarin.Forms.Platform.Android/OxyPlot.Xamarin.Forms.Platform.Android.csproj",
+      "OxyPlot.Xamarin.Forms.Platform.iOS/OxyPlot.Xamarin.Forms.Platform.iOS.csproj",
+      "OxyPlot.Xamarin.Forms.Platform.MacOS/OxyPlot.Xamarin.Forms.Platform.MacOS.csproj",
+      "Examples/Xamarin.Forms/SimpleDemo/SimpleDemo/SimpleDemo.csproj",
+      "Examples/Xamarin.Forms/SimpleDemo/SimpleDemo.Android/SimpleDemo.Android.csproj",
+      "Examples/Xamarin.Forms/SimpleDemo/SimpleDemo.iOS/SimpleDemo.iOS.csproj",
+      "Examples/Xamarin.Forms/SimpleDemo/SimpleDemo.MacOS/SimpleDemo.MacOS.csproj"
+    ]
+  }
+}
