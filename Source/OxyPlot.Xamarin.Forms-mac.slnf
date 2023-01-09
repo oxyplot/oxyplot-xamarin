@@ -13,7 +13,10 @@
       "Examples/Xamarin.Forms/SimpleDemo/SimpleDemo/SimpleDemo.csproj",
       "Examples/Xamarin.Forms/SimpleDemo/SimpleDemo.Android/SimpleDemo.Android.csproj",
       "Examples/Xamarin.Forms/SimpleDemo/SimpleDemo.iOS/SimpleDemo.iOS.csproj",
-      "Examples/Xamarin.Forms/SimpleDemo/SimpleDemo.MacOS/SimpleDemo.MacOS.csproj"
+      "Examples/Xamarin.Forms/SimpleDemo/SimpleDemo.MacOS/SimpleDemo.MacOS.csproj",
+      "Examples/ExampleBrowser.Android/ExampleBrowser.Android.csproj",
+      "Examples/ExampleBrowser.iOS/ExampleBrowser.iOS.csproj",
+      "Examples/ExampleBrowser.Mac/ExampleBrowser.Mac.csproj"
     ]
   }
 }
