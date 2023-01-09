@@ -42,7 +42,7 @@ namespace ExampleBrowser
             menu.AddItem (new NSMenuItem { Submenu = editMenu });
 
             var examplesMenu = new NSMenu ("Examples");
-            exampleList = Examples.GetList ();
+            exampleList = Examples.GetList().ToList<ExampleInfo>();
 
             var categories = exampleList.Select (e => e.Category).Distinct ().OrderBy (c => c).ToArray ();
             var categoryMenus = new Dictionary<string,NSMenu> ();
