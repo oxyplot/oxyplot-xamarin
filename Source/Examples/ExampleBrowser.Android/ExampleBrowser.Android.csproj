@@ -55,10 +55,10 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
     <Reference Include="OxyPlot">
-      <HintPath>..\..\..\packages\OxyPlot.Core.2.1.0\lib\netstandard2.0\OxyPlot.dll</HintPath>
+      <HintPath>..\..\packages\OxyPlot.Core.2.1.0\lib\netstandard2.0\OxyPlot.dll</HintPath>
     </Reference>
     <Reference Include="ExampleLibrary">
-      <HintPath>..\..\..\packages\OxyPlot.ExampleLibrary.2.1.0\lib\netstandard2.0\ExampleLibrary.dll</HintPath>
+      <HintPath>..\..\packages\OxyPlot.ExampleLibrary.2.1.0\lib\netstandard2.0\ExampleLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -86,7 +86,7 @@
     <Folder Include="Assets\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\OxyPlot.Xamarin.Android\OxyPlot.Xamarin.Android.csproj">
+    <ProjectReference Include="..\..\OxyPlot.Xamarin.Android\OxyPlot.Xamarin.Android.csproj">
       <Project>{3296D69F-F4B7-44A5-AEB9-7A179E65F8DD}</Project>
       <Name>OxyPlot.Xamarin.Android</Name>
     </ProjectReference>

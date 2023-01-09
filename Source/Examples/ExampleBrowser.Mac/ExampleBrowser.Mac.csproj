@@ -70,10 +70,10 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.Mac" />
     <Reference Include="OxyPlot">
-      <HintPath>..\..\..\packages\OxyPlot.Core.2.1.0\lib\netstandard2.0\OxyPlot.dll</HintPath>
+      <HintPath>..\..\packages\OxyPlot.Core.2.1.0\lib\netstandard2.0\OxyPlot.dll</HintPath>
     </Reference>
     <Reference Include="ExampleLibrary">
-      <HintPath>..\..\..\packages\OxyPlot.ExampleLibrary.2.1.0\lib\netstandard2.0\ExampleLibrary.dll</HintPath>
+      <HintPath>..\..\packages\OxyPlot.ExampleLibrary.2.1.0\lib\netstandard2.0\ExampleLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -100,7 +100,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\..\OxyPlot.Xamarin.Mac\OxyPlot.Xamarin.Mac.csproj">
+    <ProjectReference Include="..\..\OxyPlot.Xamarin.Mac\OxyPlot.Xamarin.Mac.csproj">
       <Project>{F2A015AC-B7E0-4452-99A5-B5106BF57E24}</Project>
       <Name>OxyPlot.Xamarin.Mac</Name>
     </ProjectReference>
