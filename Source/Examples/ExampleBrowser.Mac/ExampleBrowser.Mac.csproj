@@ -68,6 +68,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="netstandard" />
     <Reference Include="Xamarin.Mac" />
     <Reference Include="OxyPlot">
       <HintPath>..\..\packages\OxyPlot.Core.2.1.0\lib\netstandard2.0\OxyPlot.dll</HintPath>
