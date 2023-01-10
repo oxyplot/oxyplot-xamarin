@@ -11,7 +11,7 @@
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>OxyPlot.Xamarin.iOS</PackageId>
-    <Version>2.0.0</Version>
+    <Version>2.1.0</Version>
     <Authors>OxyPlot contributors</Authors>
     <Copyright>OxyPlot contributors</Copyright>
     <PackageIconUrl>https://raw.githubusercontent.com/oxyplot/oxyplot/master/Icons/OxyPlot_128.png</PackageIconUrl>
