@@ -5,7 +5,7 @@
     xmlns:local="using:SimpleDemo"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:windows="using:OxyPlot.Windows"
+    xmlns:windows="using:OxyPlot.UWP"
     mc:Ignorable="d">
 
     <Page.DataContext>
