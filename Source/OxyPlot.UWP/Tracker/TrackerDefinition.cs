@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace OxyPlot.Windows
+namespace OxyPlot.UWP
 {
     using global::Windows.UI.Xaml;
     using global::Windows.UI.Xaml.Controls;

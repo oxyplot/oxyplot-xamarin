@@ -133,9 +133,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\OxyPlot.Windows\OxyPlot.Windows.csproj">
+    <ProjectReference Include="..\..\..\OxyPlot.UWP\OxyPlot.UWP.csproj">
       <Project>{5aa87152-20d5-48f7-ad0f-6e6baa61fc25}</Project>
-      <Name>OxyPlot.Windows</Name>
+      <Name>OxyPlot.UWP</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\OxyPlot\OxyPlot.csproj">
       <Project>{7a0b35c0-dd17-4964-8e9a-44d6cecdc692}</Project>
@@ -146,7 +146,7 @@
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
