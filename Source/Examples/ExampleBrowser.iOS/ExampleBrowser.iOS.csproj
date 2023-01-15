@@ -115,6 +115,7 @@
       <Project>{191ABC81-B335-44D7-BE0D-3C5E9196FA8B}</Project>
       <Name>OxyPlot.Xamarin.iOS</Name>
       <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
