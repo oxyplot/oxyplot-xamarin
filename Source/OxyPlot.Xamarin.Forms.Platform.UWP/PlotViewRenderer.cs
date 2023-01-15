@@ -11,7 +11,7 @@ namespace OxyPlot.Xamarin.Forms.Platform.UWP
 {
     using System.ComponentModel;
 
-    using OxyPlot.Windows;
+    using OxyPlot.UWP;
 
     /// <summary>
     /// Provides a custom <see cref="OxyPlot.Xamarin.Forms.PlotView" /> renderer for UWP projects with xamarin forms. 
