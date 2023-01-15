@@ -109,7 +109,7 @@
     <EmbeddedResource Include="Properties\OxyPlot.Xamarin.Forms.Platform.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OxyPlot.Windows\OxyPlot.UWP.csproj">
+    <ProjectReference Include="..\OxyPlot.UWP\OxyPlot.UWP.csproj">
       <Project>{E5A01125-17B6-4568-A065-65D56AC68D8F}</Project>
       <Name>OxyPlot.UWP</Name>
     </ProjectReference>
